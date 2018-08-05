@@ -1,0 +1,47 @@
+<div>
+<div class="col-md-3">Project:
+    <select ng-model="projId" class="form-control"
+            ng-options="project.id as project.name for project in projects"
+            ng-value="project.id">{{project.name}}}</option>
+    </select>
+</div>
+    <div class="col-md-1" style="margin-top:18px">
+        <button type="button"
+                class="btn btn-primary"
+                ng-click="listReport()">LIST!
+        </button>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<div ng-show="showing">
+    <div>
+        <span>Project total Hours: </span> <span>{{report.totalHours}}</span>
+        <div>
+            <h2>Total by years:</h2>
+            <div ng-repeat="yearTotal in report.total">
+                <div>Year: {{yearTotal.year}}</div>
+                <div>Hours: {{yearTotal.totalHours}}</div>
+            </div>
+        </div>
+    </div>
+    <h2>Employees</h2>
+    <div ng-repeat="employee in report.employees">
+
+        <div>
+        {{employee.name}}
+            {{employee.totalHours}}
+            <div ng-repeat="item in employee.sums">
+                <div>
+                    {{item.year}} : {{item.totalHours}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>

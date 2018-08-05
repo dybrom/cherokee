@@ -1,0 +1,16 @@
+<div>
+    <table id="tableProjectsWidget">
+        <tr>
+            <td>{{data.name}}</td>
+            <td>{{data.customer.name}}</td>
+            <td style="width:500px;">{{data.team.name}}</td>
+            <td style="border:0px solid black; width:100px;">
+                <a href="" ng-click="edit(data)"><button class="btn btn-primary" style="width:100px;"><b>EDIT</b></button></a>
+            </td>
+            <td style="border:0px solid black; width:100px;">
+                <a href="" ng-click="delete(data)"><button class="btn btn-danger" style="margin-left:10px; width:100px;"><b>DELETE</b></button></a>
+            </td>
+        </tr>
+    </table>
+    <hr>
+</div>

@@ -1,0 +1,29 @@
+<div>
+    <div ng-click="setcr()" class="text-center" style="margin-left:-20%; margin-bottom: 20px;"><h1>TimeKeeper</h1></div>
+
+    <div><h4 id="err" class="text-center" style="margin-left:-20%; color:red;"></h4></div>
+
+    <div class="loginForm">
+        <form name="valForm">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input type="text" name="valUsername" ng-model="user.name" class="mdl-textfield__input" id="loginUsername">
+                <label class="mdl-textfield__label" for="loginUsername">Username</label>
+            </div>
+
+            <br>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input type="password" name="valPassword" ng-model="user.pass" class="mdl-textfield__input" id="loginPassword">
+                <label class="mdl-textfield__label" for="loginPassword">Password</label>
+            </div>
+           
+            <div style="display:flex;flex-direction:column; align-items:center;">
+                <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="width:100%; margin-bottom:15px;" ng-disabled="
+                valForm.valUsername.$touched && valForm.valUsername.$invalid ||
+                valForm.valPassword.$touched && valForm.valPassword.$invalid" ng-click="login()">Sign in</button>
+
+                <div class="g-signin2" data-onsuccess="onSignIn" data-width="500" data-longtitle="true" id="loginBtn"></div>
+            </div>
+        </form>
+    </div>
+</div>

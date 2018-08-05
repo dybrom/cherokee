@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="timeKeeper">
+
+<head>
+    <link href="styles/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="styles/style.css" type="text/css"  rel="stylesheet" />
+    <link href="styles/font-awesome.min.css" type="text/css"  rel="stylesheet" />
+    <link href="styles/sweetalert.min.css" type="text/css"  rel="stylesheet" />
+    <link href="styles/toaster.min.css" type="text/css"  rel="stylesheet" />
+
+
+    <script src="library/angular.min.js"></script>
+    <script src="library/angular-route.min.js"></script>
+    <script src="library/angular-animate.min.js"></script>
+    <script src="library/ui-bootstrap-tpls.min.js"></script>
+    <script src="library/jquery.3.2.1.min.js"></script>
+    <script src="library/popper.min.js"></script>
+    <script src="library/bootstrap.min.js"></script>
+    <script src="library/sweetalert.min.js"></script>
+    <script src="library/toaster.min.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/sidebar.js"></script>
+    <script src="scripts/controllers/employeesController.js"></script>
+    <script src="scripts/controllers/teamsController.js"></script>
+    <script src="scripts/controllers/customersController.js"></script>
+    <script src="scripts/controllers/projectsController.js"></script>
+    <script src="scripts/controllers/timeTrackingController.js"></script>
+    <script src="scripts/controllers/dashboardController.js"></script>
+    <script src="scripts/controllers/invoicesController.js"></script>
+    <script src="scripts/services/dataService.js"></script>
+    <script src="scripts/services/infoService.js"></script>
+    <script src="scripts/directives/customerDirective.js"></script>
+    <script src="scripts/directives/employeeDirective.js"></script>
+    <script src="scripts/directives/projectDirective.js"></script>
+    <script src="scripts/directives/teamDirective.js"></script>
+    <script src="scripts/directives/invoiceDirective.js"></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
+</head>
+
+  <body>
+      <header>
+          <div class="container">
+              <div class="pull-left"><h2>Time Keeper</h2></div>
+              <div class="pull-right" style="margin-top:24px">
+                  <a href="#/teams"><button class="btn btn-primary">Teams</button></a>
+                  <a href="#/employees"><button class="btn btn-primary">Employees</button></a>
+                  <a href="#/customers"><button class="btn btn-primary">Customers</button></a>
+                  <a href="#/projects"><button class="btn btn-primary">Projects</button></a>
+                  <a href="#/calendar"><button class="btn btn-primary">Calendar</button></a>
+              </div>
+          </div>
+      </header>
+
+      <div class="container"><div ng-view></div></div>
+      <toaster-container></toaster-container>
+      <footer>
+          <div>Copyright &copy; by Gigi School</div>
+      </footer>
+  </body>
+</html>

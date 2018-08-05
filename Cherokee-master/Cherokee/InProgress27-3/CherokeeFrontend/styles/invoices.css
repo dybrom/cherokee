@@ -1,0 +1,72 @@
+.datePicker {
+
+    margin: 15px 0 0 17px;
+}
+
+.btn {
+
+    border-radius: 0.5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.btn-default {
+
+    background-color: white;
+}
+
+.btn-default:focus {
+
+    border:none;
+}
+
+.invoiceListHeading {
+
+    display:flex;
+    align-items: center;
+    background-color: #F8F8F8;
+    height: 50px;
+    margin-top: 6%;
+}
+
+.invoiceListHeading b {
+
+    font-weight: 800;
+}
+
+.invoiceList {
+
+    
+    margin-top:10px;
+
+}
+
+.invoiceList ul {
+
+    list-style-type: none;
+    padding:0;
+}
+
+.invoiceList li {
+    padding:0;
+    margin-bottom:20px;
+}
+.billingAmount li {
+
+    font-size: 22px;
+    color:#464646;
+    font-weight: 900;
+    line-height: 23px;
+}
+
+
+.payed {
+
+    color:#44DC05;
+    font-weight: bold;
+}
+
+.sent {
+
+    color:#DCD505;
+    font-weight: bold;
+}

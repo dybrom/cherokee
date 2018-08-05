@@ -1,0 +1,124 @@
+<div class="heading1">
+    <h2 style="margin-top:0">Team dashboard</h2>
+</div>
+
+
+<div class="row">
+    <div class="col-md-3">Team:
+        <select ng-model="teamId" class="form-control"
+                ng-options="team.id as team.name for team in teams"
+                ng-value="team.id">{{team.name}}}</option>
+        </select>
+    </div>
+    <div class="col-md-2">Year: <input type="number" class="form-control" ng-model="year" min="2016" max="2018"></div>
+    <div class="col-md-2">Month: <select class="form-control" ng-model="month"
+                                         ng-options="months.indexOf(ind) as ind for ind in months"></select></div>
+    <div class="col-md-1" style="margin-top:18px">
+        <button type="button"
+                class="btn btn-primary"
+                ng-click="listReport()">LIST!
+        </button>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<div ng-show="showing">
+    <div class="row" style="display: flex; justify-content:center; margin-bottom:60px;">
+
+
+        <div class="col-md-3 monthOverview">
+            <i class="fa fa-check-square"></i>
+            <strong>{{report.numberOfProjects}}</strong>
+            <span>&nbsp;Projects active</span>
+        </div>
+        <div class="col-md-3 monthOverview">
+            <i class="fa fa-user"></i>
+            <strong>{{report.numberOfEmployees}}</strong>
+            <span>&nbsp;Employees worked</span>
+        </div>
+        <div class="col-md-3 monthOverview">
+            <i class="fa fa-clock-o"></i>
+            <strong>{{report.totalHours}}</strong>
+            <span>&nbsp;Total Hours</span>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="cardBox">
+            <h5>Utilization:{{report.dayss.percentageOfWorkingDays}}%</h5>
+            <canvas id="utilizationForTeam" class="chart chart-bar"
+                    chart-data="dataForUtilizationForTeam" chart-labels="labelsForUtilizationForTeam" chart-options="OptionsForUtilizationForTeam" chart-colors="colorsForUtilizationForTeam">
+            </canvas>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="cardBox">
+            <h5>Hours by project</h5>
+            <canvas id="hoursByProjectTeam" class="chart chart-bar"
+                    chart-data="dataForHoursByProjectTeam" chart-labels="labelsForHoursByProjectTeam" chart-options="OptionsForHoursByProjectTeam" chart-colors="colorsForHoursByProjectTeam">
+            </canvas>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-sm-6">
+            <div class="cardBox">
+            <h5>Missing entries by member</h5>
+            <canvas id="missingEntriesTeam" class="chart chart-horizontal-bar"
+                    chart-data="dataForMissingEntriesTeam" chart-labels="labelsForMissingEntriesTeam" chart-options="OptionsForMissingEntriesTeam" chart-colors="colorsForMissingEntriesTeam">
+            </canvas>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="cardBox">
+            <h5>Overtime hours by member</h5>
+            <canvas id="overtimeHoursTeam" class="chart chart-horizontal-bar"
+                    chart-data="dataForOvertimeHoursTeam" chart-labels="labelsForOvertimeHoursTeam" chart-options="OptionsForOvertimeHoursTeam" chart-colors="colorsForOvertimeHoursTeam">
+            </canvas>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="cardBox">
+            <h5>Utilization by member in %</h5>
+            <canvas id="UtilizationByMemberTeam" class="chart chart-bar"
+                    chart-data="dataForUtilizationByMemberTeam" chart-labels="labelsForUtilizationByMemberTeam" chart-options="OptionsForUtilizationByMemberTeam" chart-colors="colorsForUtilizationByMemberTeam">
+            </canvas>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="cardBox">
+                <h5>PTO by member </h5>
+                <canvas id="PTOByMemberTeam" class="chart chart-bar"
+                        chart-data="dataForPTOByMemberTeam" chart-labels="labelsForPTOByMemberTeam" chart-options="OptionsForPTOByMemberTeam" chart-colors="colorsForPTOByMemberTeam">
+                </canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div>-->
+<!--{{report}}-->
+<!--</div>-->
+<!--
+<div style="width:400px;">
+
+
+    <canvas id="teamTotalHoursChart"></canvas>
+
+    <div id="teamDashboardCharts"></div>
+
+    <canvas id="teamDashMissingEntries" width="800" height="450"></canvas>
+
+    <canvas id="teamDashPTOByMember" width="800" height="450"></canvas>
+
+    <canvas id="teamDashOvertimeHoursByMember" width="800" height="450"></canvas>
+
+</div>
+
+            -->

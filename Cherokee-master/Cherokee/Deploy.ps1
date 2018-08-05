@@ -1,0 +1,1 @@
+.\migrate.exe Cherokee.DAL.dll /startupConfigurationFile="Cherokee.DAL.dll.config" /force

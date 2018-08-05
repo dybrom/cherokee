@@ -1,0 +1,152 @@
+body {
+
+    background-color: white;
+}
+
+
+header, footer {
+    position: fixed;
+    color: white;
+    background-color: #343a40;
+    width: 100%;
+    z-index: 999;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.3);
+
+}
+
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
+
+hr {
+    border: 0;
+    margin: 12px 0;
+    height: 3px;
+    background-color: #00C;
+    opacity: 0.5;
+}
+
+ tr.noBorder th {
+     border-top: 0;
+     //border-collapse: collapse;
+ }
+
+.btn {
+
+    border-radius: 1px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.3);
+}
+
+
+
+.grid {
+    background-color: #EEE;
+}
+
+.grid:nth-child(odd) {
+    background-color: #EFE;
+}
+
+.label {
+    text-align: right;
+    padding: 8px;
+    color: black;
+}
+
+.custFrame {
+    display: table;
+    float: left;
+    margin: 6px;
+    padding: 8px;
+    border: solid blue 2px;
+}
+
+.custImage {
+    width: 120px;
+    float: left;
+    margin: 0 12px;
+}
+
+.custData {
+    float: left;
+}
+
+.custTitle {
+    font-size: 1.2em;
+}
+
+.custNav {
+    float: right;
+}
+
+.modal-header {
+
+    color: black;
+    //border: solid 1px #369;
+    z-index: 9999999;
+}
+
+.modal-footer {
+
+    //border: solid 1px #369;
+    z-index: 9999999;
+}
+
+.calendar {
+    width: 574px;
+}
+
+.day {
+    float: left;
+    width: 72px;
+    height: 72px;
+    margin: 4px;
+    padding: 4px;
+    border: 1px solid black;
+}
+
+.dayhours {
+    float: right;
+    font-size: 2.5em;
+}
+
+ #tableHeaderProjects{
+     border: 0px solid black;
+     border-collapse:collapse;
+     text-indent:10px;
+ }
+ #tableHeaderProjects th, #tableHeaderProjects td{
+     width:200px;
+ }
+ #tableProjectsWidget{
+     border: 0px solid black;
+     border-collapse:collapse;
+     text-indent:10px;
+ }
+ #tableProjectsWidget td{
+     width:200px;
+     border-right: 1px solid #eee;
+ }
+ #tableProjectsWidget td:first-of-type, #tableProjectsWidget td:last-of-type{
+     border-left: 1px solid #eee;
+ }
+.fade {
+
+    opacity: 1; !important
+}
+.workingday { background-color: #5bc0de; }
+.publicholiday { background-color: indianred; }
+.otherabsence { background-color: yellow; }
+.religiousday { background-color: green; }
+.sickleave { background-color: red; }
+.vacation { background-color: teal; }
+.businessabsence { background-color: blue; }
+.empty { background-color: white; }
+.weekend { background-color: indianred; }
+.future { background-color: lightgrey; }
+.spaceholder { background-color: transparent; border: 0; }

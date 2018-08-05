@@ -1,0 +1,162 @@
+.nav-item > a > img {
+
+    width: 7.604vw;
+}
+
+.nav-item > a {
+
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+#navbarNavAltMarkup2 {
+
+    display: flex;
+    justify-content: center;
+}
+.quickMenu {
+
+    display:flex;
+    justify-content:space-between;
+    background-color: white;
+}
+.quickMenu > li {
+
+}
+
+.quickMenu > li > a:hover {
+
+    background-color: transparent;
+    text-decoration: none;
+}
+
+main > .navbar {
+
+    margin:40px 0 60px 0;
+    box-shadow: none;
+    overflow: visible;
+
+}
+
+.absenceReportInfo {
+
+    padding: 20px 0 0 35px;
+}
+
+.absenceReportInfo > h6 {
+
+    color: #848484;
+    font-weight: bold;
+    font-size: 1.14vw;
+}
+
+.absenceReportInfo > span {
+
+    color: #BCBCBC;
+    font-weight: lighter;
+    font-size: 1vw;
+}
+
+.absenceReportInfo > h2 {
+
+    color: #646464;
+    font-weight: bold;
+    font-size: 3.59vw;
+}
+
+.myActivityOverview {
+
+    padding: 5px 0 0 20px;
+}
+
+.myActivityItem {
+
+    display: flex;
+    height: 2.70vw;
+
+
+
+}
+
+.myActivityItem > img {
+
+    width:2.70vw;
+    margin-right: 15px;
+}
+
+.myActivityItem > h6 {
+
+    font-weight: bolder;
+    font-size: 1vw;
+}
+
+.myActivityItem > h3 {
+
+    font-size: 2.70vw;
+    font-weight: bold;
+    margin-right: 3px;
+
+}
+
+.myActivityItem > span {
+
+    font-size: 1vw;
+    line-height: 15px;
+    margin-top: 7px;
+
+}
+
+.task {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.taskName {
+
+    color:#4D4D4D;
+    font-weight: bold;
+    font-size:1.041vw;
+}
+
+.taskDate {
+
+
+    color:#4D4D4D;
+    font-size:0.9vw;
+    text-align: right;
+
+}
+
+.daysItem {
+
+    display: flex;
+    align-items: center;
+    margin-bottom:15px;
+}
+
+
+
+.daysItem > img {
+
+    margin-right:15px;
+}
+
+.daysItem > h2 {
+
+    font-size: 2.70vw;
+    font-weight: bold;
+    margin-right: 5px;
+
+}
+
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+
+    border-right:10px solid blue;
+}

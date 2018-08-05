@@ -1,0 +1,73 @@
+<div>
+    <table class="table" style="margin-bottom:20px;">
+        <tr class="noBorder" style="background-color: #F8F8F8;">
+
+            <th style="display: flex; flex-direction: row;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-8">
+                            <h2>Team {{data.name}}</h2>
+                            <span style="font-weight: normal;">{{data.members.length}} Members</span>
+                        </div>
+                        <div class="col-md-4" style="display: flex; flex-direction: row; margin-top: 20px;">
+
+                            <a href="" ng-click="edit(data)">
+                                <button class="col-md-12 btn btn-primary"><b>EDIT</b></button>
+                            </a>
+                            <a href="" ng-click="delete(data)">
+                                <button class="col-md-12 btn btn-danger" style="margin-left:10px;"><b>DELETE</b></button>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </th>
+            <th></th>
+            <th></th>
+            <th>
+
+            </th>
+
+
+        </tr>
+        <tr>
+
+            <th>Employees</th>
+            <th>Roles</th>
+            <th>Hours</th>
+            <th>Settings</th>
+        </tr>
+        <tr ng-repeat="member in data.members">
+
+            <td>{{member.employee.name}}</td>
+            <td>{{member.role.name}}</td>
+            <td>{{member.hours}}</td>
+            <td>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="" ng-click="editMember(member)">
+                            <button class="col-md-5 btn btn-primary" style="margin-right:5px;">
+                                <b>EDIT</b>
+                            </button>
+                        </a>
+                        <a href="" ng-click="deleteMember(member)">
+                            <button class="col-md-5 btn btn-danger">
+                                <b>DELETE</b>
+                            </button>
+                        </a>
+
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="" ng-click="addMember(data)">
+                    <button class="col-md-4 btn btn-success"><b>ADD MEMBER</b></button>
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>

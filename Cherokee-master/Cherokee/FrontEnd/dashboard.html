@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+
+    <title>Dashboard</title>
+</head>
+<body>
+<div class="container-fluid">
+
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">TK</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <div id="profileInfo">
+                                <span>Adi Pandzic</span>
+                                <span>UI/UX Designer</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <form>
+                        <div class="group employeeSearch">
+                            <input type="search" aria-label="Search"><span class="highlight"></span><span class="bar"></span>
+                            <label>Search Projects, Tasks etc.</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+        <nav class="col-md-2 d-none d-md-block sidebar" >
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="http://localhost:63342/TimeKeeperFinalDesign/dashboard.html">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:63342/TimeKeeperFinalDesign/tasks.html">Tasks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:63342/TimeKeeperFinalDesign/projects.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:63342/TimeKeeperFinalDesign/teams.html">Teams</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:63342/TimeKeeperFinalDesign/employees.html">Employees</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:63342/TimeKeeperFinalDesign/invoices.html">Invoices</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Reports</a>
+                </li>
+
+            </ul>
+
+        </nav>
+        <main class="col-md-10 col-sm-12 col-xs-12"style="">
+
+            <div class="row heading1">
+                <span>Dashboard</span>
+            </div>
+
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup2" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup2">
+                    <div class="navbar-nav row">
+                        <ul class="navbar-nav mr-auto quickMenu">
+                            <li class="nav-item col-md-2 ">
+                                <a href="" data-toggle="tooltip" data-placement="bottom" title="Manage Employees">
+                                    <img src="img/manageemployees.png" alt="">
+                                </a>
+                            </li>
+                            <li class="nav-item col-md-2">
+                                <a href="" data-toggle="tooltip" data-placement="bottom" title="Manage Teams">
+                                    <img src="img/manageteams.png" alt="">
+                                </a>
+                            </li>
+                            <li class="nav-item col-md-2">
+                                <a href="" data-toggle="tooltip" data-placement="bottom" title="Manage Projects">
+                                    <img src="img/manageprojects.png" alt="">
+                                </a>
+                            </li>
+                            <li class="nav-item col-md-2">
+                                <a href="" data-toggle="tooltip" data-placement="bottom" title="Manage Invoices">
+                                    <img src="img/manageinvoices.png" alt="">
+                                </a>
+                            </li>
+                            <li class="nav-item col-md-2">
+                                <a href="" data-toggle="tooltip" data-placement="bottom" title="Manage Customers">
+                                    <img src="img/managecustomers.png" alt="">
+                                </a>
+                            </li>
+                            <li class="nav-item col-md-2">
+                                <a href="" data-toggle="tooltip" data-placement="bottom" title="General Settings">
+                                    <img src="img/generalsettings.png" alt="">
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </nav>
+
+            <div class="row heading2">
+                <span>Absence Report</span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 absenceReportInfo">
+
+                    <h6>Today's Absences</h6>
+                    <span>March 19th</span>
+                    <h2>12</h2>
+
+                </div>
+                <div class="col-md-4" style="background-color: lightgray; border: 20px solid white; height:300px;"></div>
+                <div class="col-md-5" style="background-color: lightgray; border-top:20px solid white; border-bottom:20px solid white;height:300px;"></div>
+            </div>
+
+            <div class="row heading2">
+                <span>My Activity</span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+
+                    <div class="row">
+                        <ul class="list-inline myActivityOverview mr-auto">
+                            <li class="col-md-2 list-inline-item">
+                                <h6 style="font-weight: bolder; margin-top:-15px;">THIS WEEK</h6>
+                            </li>
+                            <li class=" col-md-3 list-inline-item">
+                                <div class="myActivityItem">
+                                    <img src="img/alarm-clock.png" alt="">
+                                    <h3>24</h3>
+                                    <span>Working hours</span>
+                                </div>
+                            </li>
+                            <li class="col-md-3 list-inline-item">
+                                <div class="myActivityItem">
+                                    <img src="img/home.png" alt="">
+                                    <h3>0</h3>
+                                    <span style="margin-top: 13px;">Absences</span>
+                                </div>
+                            </li>
+                            <li class="col-md-3 list-inline-item">
+                                <div class="myActivityItem">
+                                    <img src="img/overtime.png" alt="">
+                                    <h3>0</h3>
+                                    <span>Overtime hours</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="col-md-12 cardBox">
+                                <h5>Engagement</h5>
+                                <div style="background-color: lightgray; height:200px;"></div>
+                            </div>
+                            <div class="col-md-12 cardBox">
+                                <h5>Projects</h5>
+                                <div style="background-color: lightgray; height:200px;"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-12 cardBox">
+                                <h5>Tasks</h5>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <span class="taskName">Seed database with mock data</span>
+                                        <span class="pull-right taskDate">Yesterday</span>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <span class="taskName">Draw landing page wireframes</span>
+                                        <span class="pull-right taskDate">2 days ago</span>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <span class="taskName">Create mockups</span>
+                                        <span class="pull-right taskDate">3 days ago</span>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <span class="taskName">Choose color scheme and fonts</span>
+                                        <span class="pull-right taskDate">4 days ago</span>
+                                    </li>
+
+
+                                </ul>
+                                <div style="background-color: lightgray; height:370px;"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <div class="col-md-12  cardBox2">
+                                <h4>Days</h4>
+                                
+                                <ul class="list-inline">
+                                    <li class="list-inline-item daysItem">
+                                        <img src="img/vacation.png" alt="" style="width:50px; height:50px;">
+                                        <h2>12</h2>
+                                        <span>Vacation days</span>
+                                    </li>
+                                    <li class="list-inline-item daysItem">
+                                        <img src="img/employed.png" alt="" style="width:50px; height:50px;">
+                                        <h2>32</h2>
+                                        <span>Months Employed</span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </main>
+
+
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!--<div class="custFrame">
+    <img class="custImage" ng-src="images/{{data.monogram}}.jpg">
+    <div class="custData">
+        <span class="custTitle">{{data.name}}</span><br>
+        {{data.contact}}<br>
+        {{data.phone}}
+    </div>
+    <div class="clearfix"></div>
+    <div class="custNav">
+        <a href="" ng-click="edit(data)"><i class="glyphicon glyphicon-pencil"></i></a>
+        <a href="" ng-click="delete(data)"><i class="glyphicon glyphicon-trash"></i></a>
+    </div>
+</div>-->
+
+
+
+<div>
+    <table class="table">
+        <tr>
+            <th>Monogram</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Phone</th>
+            <th>Settings</th>
+
+        </tr>
+        <tr>
+            <td><img ng-src="images/{{data.monogram}}.jpg" style="width:200px;"></td>
+            <td>{{data.name}}</td>
+            <td>{{data.contact}}</td>
+            <td>{{data.phone}}</td>
+            <td><div class="row">
+                <div class="col-md-12">
+                    <a href="" ng-click="edit(data)">
+                        <button class="col-md-5 btn btn-primary" style="margin-right:5px;">
+                            <b>EDIT</b>
+                        </button>
+                    </a>
+                    <a href="" ng-click="delete(data)">
+                        <button class="col-md-5 btn btn-danger">
+                            <b>DELETE</b>
+                        </button>
+                    </a>
+                </div>
+            </div></td>
+
+        </tr>
+    </table>
+</div>

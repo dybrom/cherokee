@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app="timeKeeper">
+
+<head>
+    <link href="styles/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="styles/style.css" type="text/css"  rel="stylesheet" />
+    <link href="styles/styles.css" type="text/css"  rel="stylesheet" />
+    <link href="styles/font-awesome.min.css" type="text/css"  rel="stylesheet" />
+
+
+    <script src="library/angular.min.js"></script>
+    <script src="library/angular-route.min.js"></script>
+    <script src="library/ui-bootstrap-tpls.min.js"></script>
+    <script src="library/jquery.3.2.1.min.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/dataService.js"></script>
+    <script src="scripts/controllers/employeesController.js"></script>
+    <script src="scripts/controllers/teamsController.js"></script>
+    <script src="scripts/controllers/customersController.js"></script>
+    <script src="scripts/controllers/projectsController.js"></script>
+    <script src="scripts/controllers/timeTrackingController.js"></script>
+    <script src="scripts/directives/customerDirective.js"></script>
+    <script src="scripts/directives/employeeDirective.js"></script>
+    <script src="scripts/directives/projectDirective.js"></script>
+    <script src="scripts/directives/teamDirective.js"></script>
+
+
+
+  </head>
+
+  <body>
+  <div class="container-fluid">
+
+      <div class="row">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+              <a class="navbar-brand" href="#">TK</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                      <ul class="navbar-nav mr-auto">
+                          <li class="nav-item">
+                              <div id="profileInfo">
+                                  <span>Adi Pandzic</span>
+                                  <span>UI/UX Designer</span>
+                              </div>
+                          </li>
+                      </ul>
+                      <!--<form>-->
+                          <!--<div class="group employeeSearch">-->
+                              <!--<input type="search" aria-label="Search"><span class="highlight"></span><span class="bar"></span>-->
+                              <!--<label>Search Projects, Tasks etc.</label>-->
+                          <!--</div>-->
+                      <!--</form>-->
+                  </div>
+              </div>
+          </nav>
+      </div>
+
+
+
+      <nav class="col-md-2 d-none d-md-block sidebar" >
+          <ul class="nav nav-pills flex-column">
+              <li class="nav-item">
+                  <a class="nav-link active" href="">Home<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#/projects">Projects</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#/calendar">Calendar</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#/teams">Teams</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#/employees">Employees</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#/invoices">Invoices</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#/reports">Reporgts</a>
+              </li>
+
+          </ul>
+
+      </nav>
+
+      <div class="col-md-10 offset-md-2"><div ng-view></div></div>
+
+
+  </body>
+</html>

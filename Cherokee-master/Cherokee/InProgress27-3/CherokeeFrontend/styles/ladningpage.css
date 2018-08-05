@@ -1,0 +1,344 @@
+html {
+
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Proxima Nova", "Mukta Malar";
+}
+
+header {
+
+    background-image:url("../img/coverimg.png");
+    background-size: cover;
+    overflow: visible;
+    line-height:15vw;
+
+}
+
+.cover {
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+    margin: 0 auto;
+    width: 95%;
+    line-height: 30px;
+    z-index:3;
+
+}
+
+
+
+#monogram {
+    
+    font-family: "Proxima Nova";
+    font-weight: 900;
+    font-size:1.6em;
+    margin-left:2em;
+    color:white;
+    
+
+    
+}
+
+#monogram > a {
+    
+    color: white;
+    text-decoration: none;
+}
+
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    margin-right:2em;
+    
+
+
+}
+
+.navbar ul li a {
+
+    color:white;
+    font-family: "Proxima Nova";
+    text-decoration: none;
+    padding: 5px 15px;
+    
+}
+
+.navbar ul li a:hover {
+
+    color:white;
+    font-family: "Proxima Nova";
+    text-decoration: none;
+    padding: 5px 15px;
+    border-bottom: 4px solid white;
+
+}
+
+.navbar > ul > li > a:not(last-child) {
+
+    margin-right:30px;
+}
+
+#login {
+
+    border: 1.2px solid white;
+    border-radius: 10%;
+    
+}
+
+#login:hover {
+
+    background: #fff;
+    color: darkblue;
+}
+
+#login:hover {
+
+
+}
+
+.headingMessage {
+
+    display:grid;
+    grid-template-columns: 2fr;
+ 
+    align-items: end;
+    margin-top: 7vw;
+    margin-left:6.5vw;
+
+
+}
+
+
+
+.headingMessage1 {
+
+    color: #6a8bf7;
+    font-size: 3.95vw;
+    letter-spacing: normal;
+    font-weight: 300;
+    font-family: "Proxima Nova";
+    margin-bottom:-6.1vw;
+
+    text-align: left;
+
+
+}
+
+.headingMessage2 {
+        
+    font-size: 5.5vw;
+    color:white;
+    font-weight: bold;
+    font-family: "Proxima Nova";
+
+    text-align: left;
+    margin-top:-4.5vw;
+    margin-bottom: 250px;
+
+}
+
+@media only screen and (max-width: 375px) {
+
+
+    .headingMessage1 {
+
+        font-size: 3.95vw;
+        text-align: center;
+    }
+
+    .headingMessage2 {
+
+        font-size: 5.5vw;
+        text-align: center;
+
+    }
+
+}
+
+#about {
+    display: grid;
+    background-image: url("../img/aboutimg.png");
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+
+
+}
+
+#about > h1 {
+
+    font-size: 3.541vw;
+    color:white;
+    font-weight: bold;
+    padding-top:9.25vw;
+    padding-bottom:150px;
+
+}
+
+#about > h3 {
+
+    font-size: 2.916vw;
+
+    margin: 0;
+    padding-top:5.2vw;
+    color:white;
+    font-weight: normal;
+
+}
+
+#about > h4 {
+
+    font-size: 1.302vw;
+    color:white;
+    opacity: 0.29;
+    mix-blend-mode: lighten;
+    font-weight: normal;
+    margin-top:0.43vw;
+}
+
+#services {
+    display: grid;
+    background-image: url("../img/services.png");
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    font-family: "Proxima Nova";
+
+
+}
+
+#services > h1 {
+
+    font-size: 3.75vw;
+    color: white;
+    font-weight:700;
+    letter-spacing: 1.8px;
+    margin-bottom:80px;
+
+}
+
+.serviceItems {
+
+    display: grid;
+    width: 80%;
+    margin: 0 auto;
+    grid-template-columns: repeat(4,1fr);
+    grid-column-gap: 60px;
+}
+
+.serviceItems > div > img {
+
+    height: 10.937vw;
+}
+
+.serviceItems > div > h4 {
+
+    color:white;
+    font-size: 2.08vw;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 800;
+    line-height: 30px;
+
+}
+
+.serviceItems > div > p {
+
+    color:white;
+    font-size: 1.25vw;
+    font-weight: 300;
+    text-align: justify;
+    opacity: 0.7;
+
+}
+
+#team {
+    display: grid;
+    background-image: url("../img/services.png");
+
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    font-family: "Proxima Nova";
+    padding-bottom:100px;
+
+
+}
+
+
+
+#team > h1 {
+
+    font-size: 3.75vw;
+    color: white;
+    font-weight:700;
+    letter-spacing: 1.8px;
+    margin-bottom:80px;
+
+}
+
+.teammates {
+
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-column-gap: 40px;
+    width:85%;
+    margin:0 auto;
+
+
+}
+
+.teammates > div > img {
+
+    height: 14.16vw;
+}
+
+.teammates > div > h4 {
+
+    color:white;
+    font-size: 2.29vw;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 800;
+
+
+}
+
+.teammates > div > span {
+
+    color:white;
+    font-size:1.875vw;
+    font-family: "Mukta Malar";
+    opacity: 0.65;
+    letter-spacing: 0.9px;
+
+
+}
+
+.teammates > div > h4 > span {
+
+    color:#5d77c2;
+
+}
+
+.footer {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #111111;
+    grid-template-rows: minmax(40px, auto);
+    text-align: center;
+    align-items: center;
+    color:white;
+}
+
+
+
+
+

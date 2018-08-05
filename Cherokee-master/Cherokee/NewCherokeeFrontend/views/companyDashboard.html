@@ -1,0 +1,152 @@
+<div class="heading1">
+    <h2 style="margin-top:0;">Company dashboard</h2>
+</div>
+<div class="row">
+
+
+    <div class="col-md-3">Year: <input type="number" class="form-control" ng-model="year" min="2016" max="2018"></div>
+    <div class="col-md-4">Month: <select class="form-control" ng-model="month"
+                                         ng-options="months.indexOf(ind) as ind for ind in months"></select></div>
+    <div class="col-md-1" style="margin-top:18px">
+        <button type="button"
+                class="btn btn-primary"
+                ng-click="companyReport()">LIST!
+        </button>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<div ng-show="showing">
+    <div class="row" style="display: flex; justify-content:center; margin-bottom:60px;">
+
+
+        <div class="col-md-3 monthOverview">
+            <i class="fa fa-check-square"></i>
+            <strong>{{report.numberOfProjects}}</strong>
+            <span>&nbsp;Projects active</span>
+        </div>
+        <div class="col-md-3 monthOverview">
+            <i class="fa fa-user"></i>
+            <strong>{{report.numberOfEmployees}}</strong>
+            <span>&nbsp;Employees worked</span>
+        </div>
+        <div class="col-md-3 monthOverview">
+            <i class="fa fa-clock-o"></i>
+            <strong>{{report.totalHours}}</strong>
+            <span>&nbsp;Total Hours</span>
+        </div>
+
+
+    </div>
+<div class="row">
+        <div class="col-sm-6">
+            <div class="cardBox">
+            <h5>Utilization:{{report.utilization}}%</h5>
+            <canvas id="utilizationForCompany" class="chart chart-bar"
+                    chart-data="dataForUtilizationForCompany" chart-labels="labelsForUtilizationForCompany" chart-options="OptionsForUtilizationForCompany" chart-colors="colorsForUtilizationForCompany">
+            </canvas>
+            </div>
+        </div>
+    <div class="col-sm-6">
+        <div class="cardBox">
+        <h5>Revenue by project in $</h5>
+        <canvas id="revenueByProject" class="chart chart-bar"
+                chart-data="dataForRevenueByProject" chart-labels="labelsForRevenueByProject" chart-options="OptionsForRevenueByProject" chart-colors="colorsForRevenueByProject">
+        </canvas>
+        </div>
+    </div>
+
+</div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="cardBox">
+            <h5>Total hours by team </h5>
+            <canvas id="totalHoursByTeam" class="chart chart-bar"
+                    chart-data="dataForTotalHoursByTeam" chart-labels="labelsForTotalHoursByTeam" chart-options="OptionsForTotalHoursByTeam" chart-colors="colorsForTotalHoursByTeam">
+            </canvas>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="cardBox">
+            <h5>Utilization by team in %</h5>
+            <canvas id="utilizationForCompanyByTeam" class="chart chart-bar"
+                    chart-data="dataForUtilizationForCompanyByTeam" chart-labels="labelsForUtilizationForCompanyByTeam" chart-options="OptionsForUtilizationForCompanyByTeam" chart-colors="colorsForUtilizationForCompanyByTeam">
+            </canvas>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="cardBox">
+            <h5>Overtime hours by team</h5>
+            <canvas id="OvertimeHoursByTeam" class="chart chart-horizontal-bar"
+                    chart-data="dataForOvertimeHoursByTeam" chart-labels="labelsForOvertimeHoursByTeam" chart-options="OptionsForOvertimeHoursByTeam" chart-colors="colorsForOvertimeHoursByTeam">
+            </canvas>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="cardBox">
+            <h5>Missing entries by team</h5>
+            <canvas id="missingEntriesForTeamInCompany" class="chart chart-horizontal-bar"
+                    chart-data="dataForMissingEntriesInCompany" chart-labels="labelsForMissingEntriesInCompany" chart-options="OptionsForMissingEntriesInCompany" chart-colors="colorsForMissingEntriesInCompany">
+            </canvas>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="cardBox">
+            <h5>No. of employees by roles</h5>
+            <canvas id="rolesInCompany" class="chart chart-bar"
+                    chart-data="dataForRolesInCompany" chart-labels="labelsForRolesInCompany" chart-options="OptionsForRolesInCompany" chart-colors="colorsForRolesInCompany">
+            </canvas>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="cardBox">
+            <h5>Utilization by role in %</h5>
+            <canvas id="utilizationForCompanyByRole" class="chart chart-bar"
+                    chart-data="dataForUtilizationForCompanyByRole" chart-labels="labelsForUtilizationForCompanyByRole" chart-options="OptionsForUtilizationForCompanyByRole" chart-colors="colorsForUtilizationForCompanyByRole">
+            </canvas>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="cardBox">
+                <h5>PTO by team</h5>
+                <canvas id="PTOByTeamCompany" class="chart chart-bar"
+                        chart-data="dataForPTOByTeamCompany" chart-labels="labelsForPTOByTeamCompany" chart-options="OptionsForPTOByTeamCompany" chart-colors="colorsForPTOByTeamCompany">
+                </canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div>-->
+    <!--{{report}}-->
+<!--</div>-->
+<!--
+<div style="width:400px;height:200px;">
+
+    <canvas id="companyTotalHoursChart"></canvas>
+
+    <canvas id="companyDashMissingEntries"></canvas>
+
+    <canvas id="companyPMutilization"></canvas>
+
+    <canvas id="companyDEVutilization"></canvas>
+
+    <canvas id="companyUXUIutilization"></canvas>
+
+    <canvas id="companyQAutilization"></canvas>
+
+    <canvas id="companyOvertime"></canvas>
+
+    <canvas id="companyRevenue"></canvas>
+
+</div>
+!-->

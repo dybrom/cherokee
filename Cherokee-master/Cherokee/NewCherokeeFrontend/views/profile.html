@@ -1,0 +1,96 @@
+<div>
+    <div style="margin-top:40px;">
+        <div class="row">
+            <div class="col-md-12 projectsContainer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div style="display: flex; flex-direction: row;">
+                                    <div>
+                                        <img ng-src="person.image" alt="" style="margin-top: 0;border-radius: 50%; width:5vw; height:5vw; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.4);">
+                                    </div>
+                                    <div style="display: flex; flex-direction: column; margin-left:30px;">
+                                        <h2>{{person.firstName}} {{person.lastName}}</h2>
+                                        <span>{{person.position.name}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4" ng-show="currentUser.role=='Administrator'">
+                                <a href="" ng-click="edit(person)"><button class="col-md-5 btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-right:10px;">EDIT</button></a>
+                                <a href="" ng-click="delete(person)"><button class="col-md-5 btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color: #db3236;">DELETE</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+
+                        <ul class="projectInfo" style="margin-top:40px;">
+                            <li><div class="Info">
+                                <div style="display: flex; flex-direction: row; justify-content: center; margin-left:15px;">
+                                    <span>Status:&nbsp;&nbsp; </span>
+                                    <strong style="color: lawngreen; font-size:24px;">{{person.status}}</strong>
+                                </div>
+                            </div></li>
+
+                            <li><div class="Info">
+
+                                <div style="display: flex; flex-direction: row; justify-content: center; margin-left:15px;">
+                                    <span>Birth date:&nbsp;&nbsp; </span>
+                                    <strong style="font-size:18px;">{{person.birthDate | date: dd/MM/YYYY}}</strong>
+                                </div>
+                            </div></li>
+
+                            <li><div class="Info">
+
+                                <div style="display: flex; flex-direction: row; justify-content: center; margin-left:15px;">
+                                    <span>Begin date:&nbsp;&nbsp; </span>
+                                    <strong style="font-size:18px;">{{person.beginDate | date: dd/MM/YYYY}}</strong>
+                                </div>
+                            </div></li>
+
+                            <li><div class="Info">
+
+                                <div style="display: flex; flex-direction: row; justify-content: center; margin-left:15px;">
+                                    <span>Phone: &nbsp;&nbsp;</span>
+                                    <strong style="font-size:18px;">{{person.phone}}</strong>
+                                </div>
+                            </div></li>
+                            <li><div class="Info">
+
+                                <div style="display: flex; flex-direction: row; justify-content: center; margin-left:15px;">
+                                    <span>Email:&nbsp;&nbsp; </span>
+                                    <strong style="font-size:18px;">{{person.email}}</strong>
+                                </div>
+                            </div></li>
+
+                        </ul>
+
+
+
+                    </div>
+                    <div class="col-md-3">
+
+                        <h6>Team: <strong>{{person.teams[0].team.name}}</strong></h6>
+                        <h6>Role: <strong>{{person.teams[0].role.name}}</strong></h6>
+                        <div class="Info" style="margin-bottom:15px;display: flex; flex-direction: column; align-items:flex-start; justify-content: center;" ng-show="currentUser.role=='Administrator'">
+                            <span>Salary:</span>
+                            <h6 style="margin:0; font-weight: 900; font-size:23px; color:#474747;">${{person.salary}}.00</h6>
+                        </div>
+
+
+
+                    </div>
+                    <div class="col-md-4 monthOverview">
+                        <div class="circleRedBorder" style="border: 5px solid #4885ed;">
+                            <strong>{{person.teams[0].hours}}</strong>
+                        </div>
+                        <span>Hours this week:</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

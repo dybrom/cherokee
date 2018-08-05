@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="timeKeeper">
+
+<head>
+    <link href="app.min.css" rel="stylesheet" />
+
+    <script src="lib.min.js"></script>
+    <script src="app.min.js"></script>
+
+    <script src="template.js"></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
+  </head>
+
+  <body>
+      <header>
+          <div class="container">
+              <div class="pull-left"><h2>Time Keeper</h2></div>
+              <div class="pull-right" style="margin-top:24px">
+                  <span ng-hide="currentUser.id==0"><a href="#/teams"><button class="btn btn-primary">Teams</button></a></span>
+              <span ng-show="currentUser.role=='Administrator'"><a href="#/employees"><button class="btn btn-primary">Employees</button></a></span>
+                  <span ng-show="currentUser.role=='Administrator'"><a href="#/customers"><button class="btn btn-primary">Customers</button></a></span>
+              <span ng-hide="currentUser.id==0"><a href="#/calendar"><button class="btn btn-primary">Calendar</button></a></span>
+              <span ng-hide="currentUser.id==0"><a href="#/personalreport"><button class="btn btn-primary">Personal Report</button></a></span>
+                  <span ng-show="currentUser.role=='Administrator'"> <a href="#/annualreport"><button class="btn btn-primary">Annual Report</button></a></span>
+                  <span ng-show="currentUser.role=='Administrator' || currentUser.teams.length>0"> <a href="#/teamdashboard"><button class="btn btn-primary">Team dashboard</button></a></span>
+                  <span ng-show="currentUser.role=='Administrator'"> <a href="#/projecthistory"><button class="btn btn-primary">Project history</button></a></span>
+
+                  <span ng-show="currentUser.id==1337">
+                      <a href="#/login"><button class="btn btn-warning">LOGIN
+                      </button></a>
+                  </span>
+                  <span ng-show="currentUser.id!=0">
+                      <a href="#/logout"><button class="btn btn-warning">LOGOUT
+                      </button></a>
+                  </span>
+              </div>
+          </div>
+      </header>
+
+      <div class="container"><div ng-view></div></div>
+      <toaster-container></toaster-container>
+      <footer>
+          <div>Copyright &copy; by Gigi School</div>
+      </footer>
+
+  <div id="loader" ng-show="waitForLoad"><div id="spinner"></div></div>
+  </body>
+</html>

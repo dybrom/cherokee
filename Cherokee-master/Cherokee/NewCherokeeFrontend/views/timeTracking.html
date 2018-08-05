@@ -1,0 +1,59 @@
+<div class="heading1"><h2 style="margin-top:0">Calendar</h2></div>
+<div class="row" style="display: flex;align-items: center; margin-bottom:15px;">
+    
+    <div class="col-md-3" ng-show="currentUser.role=='Administrator' || currentUser.teams.length>0">Employee:
+        <select ng-model="empId" class="form-control"
+                ng-options="person.id as person.name for person in people"
+                ng-value="person.id">{{person.name}}}</option>
+        </select>
+    </div>
+    <div class="col-md-2">Year: <input type="number" class="form-control" ng-model="year" min="2016" max="2018" ></div>
+    <div class="col-md-2">Month: <select class="form-control" ng-model="month"
+                                         ng-options="months.indexOf(ind) as ind for ind in months"
+                                         ></select></div>
+    <div class="col-md-1" style="margin-top:18px">
+        <button type="button"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                ng-click="buildCalendar()">LIST
+        </button>
+    </div>
+
+</div>
+
+<div class="scrollbar-primary">
+    <div class="activeMonth" style="margin-bottom: 5px;">
+        <span>{{months[month] | uppercase}}, {{year}}</span>
+    </div>
+    <div class="calendar">
+
+        <div class="row" style="margin: auto; opacity: 0.8;">
+            <span class="daysOfWeek" >M</span>
+            <span class="daysOfWeek">T</span>
+            <span class="daysOfWeek">W</span>
+            <span class="daysOfWeek">T</span>
+            <span class="daysOfWeek">F</span>
+            <span class="daysOfWeek weekend" style="color:red;">S</span>
+            <span class="daysOfWeek weekend" style="color:red;">S</span>
+        </div>
+        <div ng-repeat="i in num() track by $index" class="day spaceholder"></div>
+        <div ng-repeat="day in calendar.days">
+            <div class="day" ng-class="{true: 'weekend', false: 'day'}[day.type == 8]" title="{{dayType[day.type]}}" ng-click="edit(day)">
+                <!-- <div class="{{dayType[day.type]}}" ng-show="day.type==8" style="width:100%; height:100%;"></div> -->
+                <div><strong style="font-weight: 800; font-size: 30px;line-height: 32px;">{{day.date.substring(8,10)}}</strong></div>
+                
+                <div class="{{dayType[day.type]}}" style="height:6px; width:100%;border-radius: 10px; margin-top:5px;" ng-hide="day.type==8"></div>
+                <!--<div class="clearfix"></div>-->
+                <br>
+                <span ng-hide="day.type==1 || day.type==8">{{dayType[day.type]}}</span>
+
+                
+                <div class="dayhours" ng-show="day.type==1"><i class="fa fa-hourglass-start"></i><strong>{{day.hours}}</strong>&nbsp;Hours</div>
+                <div class="dayhours" ng-show="day.details.length==1"><i class="fa fa-tasks"></i><strong>{{day.details.length}}</strong>&nbsp;Task &nbsp;</div>
+                <div class="dayhours" ng-show="day.details.length>1"><i class="fa fa-tasks"></i><strong>{{day.details.length}}</strong>&nbsp;Tasks</div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>

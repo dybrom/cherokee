@@ -1,0 +1,45 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="tm-new-modal-title">Invoice for {{invoice.projectName}}, Customer: {{invoice.name}}</h3>
+</div>
+
+<div class="modal-body" id="tm-new-modal-body">
+
+    <div>
+        {{invoice.invoiceNumber}}<br>
+        {{invoice.email}}<br>
+        <span>Amount: {{invoice.amount}}</span>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Unit</th>
+            <th>Unit Price</th>
+            <th>SubTotal</th>
+            <th>Action</th>
+        </tr>
+        <tr ng-repeat="data in invoice.roles">
+            <td>{{data.description}}</td>
+            <td>{{data.quantity}}</td>
+            <td>{{data.unit}}</td>
+            <td>{{data.unitPrice}}</td>
+            <td>{{data.subTotal}}</td>
+            <td>{{data.status}}</td>
+            <td>
+
+                <button class="btn btn-warning" type="button" ng-click="DeleteInvoiceEntry($index)">DELETE</button>
+
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<div class="modal-footer">
+
+    <button class="btn mdl-button mdl-js-button--raised mdl-button--colored" type="button" ng-click="SendInvoice()">SEND INVOICE</button>
+    <button class="btn btn-danger" type="button" ng-click="StagnateInvoice()">STAGNATE</button>
+    <button class="mdl-button mdl-js-button mdl-button--raised" type="button" ng-click="cancel()">CANCEL</button>
+
+</div>

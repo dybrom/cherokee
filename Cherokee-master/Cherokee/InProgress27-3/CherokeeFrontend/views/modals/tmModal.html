@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="tm-modal-title">{{team.name}}</h3>
+</div>
+
+<div class="modal-body" id="tm-modal-body">
+    <input type="hidden" ng-model="team.id">
+    <div class="row">
+        <div class="col-md-4 label">Name:</div>
+        <div class="col-md-6"><input type="text" class="form-control" ng-model="team.name"></div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok(team)">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel(team)">Cancel</button>
+</div>

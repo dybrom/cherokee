@@ -1,0 +1,65 @@
+<main class="col-md-12 col-sm-12 col-xs-12">
+
+    <div class="row heading1">
+        <span>Invoices</span>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+
+                <div class="col-md-4">
+                    Year:
+                    <input type="number" class="form-control" ng-model="year" min="2016" max="2018">
+                </div>
+                <div class="col-md-4">
+                    Month:
+                    <select class="form-control" ng-model="month" ng-options="months.indexOf(ind) as ind for ind in months"></select>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 pull-right" style="display:flex; justify-content:flex-end; margin-top:25px;">
+            <button class="col-md-3 btn btn-primary" type="button" >EDIT</button>
+            <button class="col-md-3 btn btn-danger" type="button" style="margin-left:10px;" >DELETE</button>
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <table class="table invoiceList">
+            <thead class="thead-light" style="padding-left:10px;">
+            <tr>
+                <th scope="col">INVOICE NUMBER</th>
+                <th scope="col">INVOICE DATE</th>
+                <th scope="col">CUSTOMER</th>
+                <th scope="col">PROJECT</th>
+                <th scope="col">BILLING AMOUNT</th>
+                <th scope="col">STATUS</th>
+            </tr>
+            </thead>
+            <tbody style="padding-left:10px;">
+            <tr>
+                <td>TKP-1234/18</td>
+                <td>15/02/2018</td>
+                <td>Mistral</td>
+                <td>TimeKeeper</td>
+                <td>$123.999</td>
+                <td>Payed</td>
+            </tr>
+            <tr>
+                <td>MNH-1234/18</td>
+                <td>15/02/2018</td>
+                <td>Harry Truman</td>
+                <td>Manhattan Project</td>
+                <td>$5.123.999</td>
+                <td>Sent</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+
+</main>

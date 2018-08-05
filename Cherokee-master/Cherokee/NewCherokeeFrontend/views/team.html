@@ -1,0 +1,54 @@
+<div style="margin-top:20px;">
+    <div class="row">
+        <div class="col-md-12 projectsContainer">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div style="display: flex; flex-direction: row;">
+                                <div class="image">
+                                    <span>{{team.image}}</span>
+                                </div>
+                                <h2>{{team.name}}</h2>
+                            </div>
+                        </div>
+                        <a href="" ng-click="edit(team)" class="col-md-2"><button class=" btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" >EDIT TEAM</button></a>
+                        <a href="" ng-click="delete(team)" class="col-md-2"><button class=" btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color: #db3236;">DELETE TEAM</button></a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="" ng-click="addMember(team)">
+    <button class="addRow">
+        <span>
+            <i class="fa fa-plus">
+            </i>
+            &nbsp;ADD MEMBER
+        </span>
+    </button>
+</a>
+<table class="table" style="margin-bottom:20px;">
+    <tr>
+        <th>Member</th>
+        <th>Role</th>
+        <th>Hours</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="member in team.members">
+        <td ng-click="view(member)">{{member.employee.name}}</td>
+        <td ng-click="view(member)">{{member.role.name}}</td>
+        <td ng-click="view(member)">{{member.hours}}</td>
+        <td>
+            <div class="listButtons" style="margin-right:6%;">
+                <a href="" ng-click="editMember(member)"><button class="col-md-3 btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-right:10px;">EDIT</button></a>
+                <a href="" ng-click="deleteMember(member)"><button class="col-md-3 btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color: #db3236;">DELETE</button></a>
+            </div>
+        </td>
+    </tr>
+</table>

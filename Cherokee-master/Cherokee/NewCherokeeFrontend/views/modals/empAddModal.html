@@ -1,0 +1,81 @@
+<div class="modal-header">
+        <h3 class="modal-title" id="emp-modal-title">ADD NEW EMPLOYEE</h3>
+</div>
+
+<div class="modal-body" id="emp-modal-body">
+    <form name="valForm">
+        <input type="hidden" ng-model="person.id">
+
+        <div class="row">
+            <div class="col-md-4 label"><span style="color:red;">* </span>First name:</div>
+            <div class="col-md-6"><input name="valFName" type="text" class="form-control" ng-model="person.firstName" placeholder="(ex. John)" required></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label"><span style="color:red;">* </span>Last name:</div>
+            <div class="col-md-6"><input name="valLName" type="text" class="form-control" ng-model="person.lastName" placeholder="(ex. Doe)" required></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label"><span style="color:red;">* </span>Email:</div>
+            <div class="col-md-6"><input name="valEmail" type="email" class="form-control" ng-model="person.email" placeholder="(ex. employee@gmail.com)" required></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label"><span style="color:red;">* </span>Phone:</div>
+            <div class="col-md-6"><input name="valPhone" type="text" class="form-control" ng-model="person.phone" placeholder="(ex. +387 62 123 123)" required></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label"><span style="color:red;">* </span>Birth date:</div>
+            <div class="col-md-6"><input name="valBD" type="text" class="form-control" ng-model="person.birthDate" placeholder="(ex. 01/15/1993)" required></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label"><span style="color:red;">* </span>Employment date:</div>
+            <div class="col-md-6"><input name="valED" type="text" class="form-control" ng-model="person.beginDate" placeholder="(ex. 01/15/2017)" required></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label">Status:</div>
+            <div class="col-md-7">
+                <label class="radio-inline"><input type="radio" ng-model="person.status" value="0" ng-checked="true">Aktivan</label>
+                <label class="radio-inline"><input type="radio" ng-model="person.status" value="1">Trial</label>
+                <label class="radio-inline"><input type="radio" ng-model="person.status" value="2">Leaver</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label"><span style="color:red;">* </span>Position:</div>
+            <div class="col-md-6"><select ng-model="person.position.id" class="form-control"
+                                          ng-options="role.id as role.name for role in roles" ng-value="role.id" required><option>{{role.name}}</option>
+            </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label">Image:</div>
+            <div class="col-md-6"><img style="width:100px;height:50px;" ng-src="{{person.image}}"></div>
+        </div>
+
+        <div class="custom-file">
+            <input id="inputImage" type="file" data-classButton="btn btn-primary" ng-model="person.image" base-sixty-four-input accept="image/*">
+            <label class="custom-file-label" for="inputImage">Choose profile image</label>
+        </div>
+    </form>
+
+    <div class="row" style="margin-top: 5px;">
+        <div class="col-md-12 text-center"><span style="color:red;">* -> Required fields!</span></div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button class="btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style=" background-color: #3cba54;" type="button" ng-click="add(person)" ng-disabled="
+    valForm.valFName.$touched && valForm.valFName.$invalid ||
+    valForm.valLName.$touched && valForm.valLName.$invalid ||
+    valForm.valEmail.$touched && valForm.valEmail.$invalid ||
+    valForm.valPhone.$touched && valForm.valPhone.$invalid ||
+    valForm.valBD.$touched && valForm.valBD.$invalid ||
+    valForm.valED.$touched && valForm.valED.$invalid                               ">SAVE</button>
+    <button class="mdl-button mdl-js-button mdl-button--raised" type="button" ng-click="cancel(person)">CANCEL</button>
+</div>

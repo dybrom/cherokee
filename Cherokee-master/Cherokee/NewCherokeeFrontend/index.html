@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html ng-app="timeKeeper">
+
+<head>
+    <link href="styles/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="styles/style.css" type="text/css"  rel="stylesheet" />
+    <link href="styles/font-awesome.min.css" type="text/css"  rel="stylesheet" />
+    <link href="styles/sweetalert.min.css" type="text/css"  rel="stylesheet" />
+    <link href="styles/dashboard.css" type="text/css"  rel="stylesheet" />
+    <link href="styles/employees.css" type="text/css"  rel="stylesheet" />
+    <link href="styles/invoices.css" type="text/css"  rel="stylesheet" />
+    <link href="styles/landingpage.css" type="text/css"  rel="stylesheet" />
+    <link href="styles/login.css" type="text/css"  rel="stylesheet" />
+    <link href="styles/ourlogin.css" type="text/css"  rel="stylesheet" />
+    <link href="styles/projects.css" type="text/css"  rel="stylesheet" />
+    <link href="styles/styles.css" type="text/css"  rel="stylesheet" />
+    <link href="styles/teams.css" type="text/css"  rel="stylesheet" />
+    <link href="styles/toaster.min.css" type="text/css"  rel="stylesheet" />
+
+    <script src="library/angular.min.js"></script>
+    <script src="library/angular-route.min.js"></script>
+    <script src="library/angular-animate.min.js"></script>
+    <script src="library/ui-bootstrap-tpls.min.js"></script>
+    <script src="library/jquery.3.2.1.min.js"></script>
+    <script src="library/sweetalert.min.js"></script>
+    <script src="library/toaster.min.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/controllers/employeesController.js"></script>
+    <script src="scripts/controllers/teamsController.js"></script>
+    <script src="scripts/controllers/customersController.js"></script>
+    <script src="scripts/controllers/projectsController.js"></script>
+    <script src="scripts/controllers/timeTrackingController.js"></script>
+    <script src="scripts/controllers/loginController.js"></script>
+    <script src="scripts/controllers/personalReportController.js"></script>
+    <script src="scripts/controllers/projectHistoryController.js"></script>
+    <script src="scripts/controllers/annualReportController.js"></script>
+    <script src="scripts/controllers/monthlyReportController.js"></script>
+    <script src="scripts/services/dataService.js"></script>
+    <script src="scripts/services/infoService.js"></script>
+    <script src="scripts/directives/customerDirective.js"></script>
+    <script src="scripts/directives/employeeDirective.js"></script>
+    <script src="scripts/directives/projectDirective.js"></script>
+    <script src="scripts/directives/teamDirective.js"></script>
+    <script src="scripts/directives/fileDirective.js"></script>
+
+    <script src="https://apis.google.com/js/platform.js"></script>
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <a class="navbar-brand" href="#/personalreport">TK</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <div id="profileInfo">
+                                    <span>{{currentUser.name}}</span>
+                                    <span>{{currentUser.role}}</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block sidebar">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#/personalreport">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/customers">Customers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/teams">Teams</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/employees">Employees</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/calendar">Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/monthlyreport">Monthly Report</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/annualreport">Annual Report</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/projecthistory">Project History</a>
+                </li>
+                <span ng-show="currentUser.id==0">
+                <a href="#/login"><button class="btn btn-warning">LOGIN
+                </button></a>
+                </span>
+                <span ng-show="currentUser.id!=0">
+                <a href="#/logout"><button class="btn btn-warning">LOGOUT
+                </button></a>
+                </span>
+            </ul>
+        </nav>
+
+        <div class="col-md-10" style="margin-left: 215px;margin-top: 65px"><div ng-view></div></div>
+
+    </div>
+
+    <toaster-container></toaster-container>
+    <div id="loader" ng-show="waitForLoad"><div id="spinner"></div></div>
+
+</div>
+</body>
+</html>

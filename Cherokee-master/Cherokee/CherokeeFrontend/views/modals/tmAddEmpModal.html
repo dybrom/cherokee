@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="tm-add-emp-modal-title">Add New Member in team : {{member.name}}</h3>
+</div>
+
+<div class="modal-body" id="tm-add-emp-modal-body">
+    <input type="hidden" ng-model="member.id">
+    <div class="row">
+        <div class="col-md-4 label">Employee:</div>
+        <div class="col-md-6">
+            <select ng-model="member.employee.id" class="form-control"
+                    ng-options="employee.id as employee.name for employee in employees"
+                    ng-value="employee.id">
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 label">Role:</div>
+        <div class="col-md-6">
+            <select ng-model="member.role.id" class="form-control"
+                    ng-options="role.id as role.name for role in roles"
+                    ng-change="member.role.name=(roles|filter:{id:member.role.id})[0].name"
+                    ng-value="member.id">{{role.name}}</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="add(member)">Add</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel(member)">Cancel</button>
+</div>

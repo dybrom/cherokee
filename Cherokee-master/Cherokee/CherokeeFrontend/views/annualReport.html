@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-md-4"><h2>Annual Report</h2></div>
+
+    <div class="col-md-2">Year: <input type="number" class="form-control" ng-model="year" min="2016" max="2018"></div>
+
+    <div class="col-md-1" style="margin-top:18px">
+        <button type="button"
+                class="btn btn-primary"
+                ng-click="listReport()">LIST!
+        </button>
+    </div>
+</div>
+
+<div ng-show="showing">
+    <div ng-repeat="project in report.list">
+       <div>
+           <h3>Project name: {{project.projectName}}</h3>
+        <h4>Total hours : {{project.totalHours}}</h4>
+       </div>
+       <div>
+           <table class="table">
+               <tr>
+               <th>{{months[0]}}</th>
+               <th>{{months[1]}}</th>
+               <th>{{months[2]}}</th>
+               <th>{{months[3]}}</th>
+               <th>{{months[4]}}</th>
+               <th>{{months[5]}}</th>
+               <th>{{months[6]}}</th>
+               <th>{{months[7]}}</th>
+               <th>{{months[8]}}</th>
+               <th>{{months[9]}}</th>
+               <th>{{months[10]}}</th>
+               <th>{{months[11]}}</th>
+               </tr>
+               <tr>
+                   <td>{{project.monthlyHours[0]}}</td>
+                   <td>{{project.monthlyHours[1]}}</td>
+                   <td>{{project.monthlyHours[2]}}</td>
+                   <td>{{project.monthlyHours[3]}}</td>
+                   <td>{{project.monthlyHours[4]}}</td>
+                   <td>{{project.monthlyHours[5]}}</td>
+                   <td>{{project.monthlyHours[6]}}</td>
+                   <td>{{project.monthlyHours[7]}}</td>
+                   <td>{{project.monthlyHours[8]}}</td>
+                   <td>{{project.monthlyHours[9]}}</td>
+                   <td>{{project.monthlyHours[10]}}</td>
+                   <td>{{project.monthlyHours[11]}}</td>
+               </tr>
+           </table>
+       </div>
+    </div>
+
+</div>

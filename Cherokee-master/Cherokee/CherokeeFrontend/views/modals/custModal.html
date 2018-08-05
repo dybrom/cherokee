@@ -1,0 +1,35 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">{{customer.name}}</h3>
+</div>
+
+<div class="modal-body" id="modal-body">
+    <input type="hidden" ng-model="customer.id">
+    <div class="row">
+        <div class="col-md-4 label">Name:</div>
+        <div class="col-md-6"><input type="text" class="form-control" ng-model="customer.name" placeholder="New Customer's Name"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 label">Contact:</div>
+        <div class="col-md-6"><input type="text" class="form-control" ng-model="customer.contact" placeholder="New Customer's Contact"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 label">Email:</div>
+        <div class="col-md-6"><input type="text" class="form-control" ng-model="customer.email" placeholder="New Customer's Email"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 label">Phone:</div>
+        <div class="col-md-6"><input type="text" class="form-control" ng-model="customer.phone" placeholder="New Customer's Phone"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 label">Status:</div>
+        <div class="col-md-7">
+            <label class="radio-inline"><input type="radio" ng-model="customer.status" value="1">Client</label>
+            <label class="radio-inline"><input type="radio" ng-model="customer.status" value="0">Prospect</label>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" type="button" ng-click="save(customer)">SAVE</button>
+    <!-- <button class="btn btn-primary" type="button" ng-click="ok()">OK</button> -->
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>

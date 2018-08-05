@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <div class="modal-title" id="ProjectHistoryEmployee-chart-modal-title"><h3>{{name}}</h3></div>
+</div>
+
+<div class="modal-body" id="ProjectHistoryEmployee-chart-modal-body">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Hours by  months </h3>
+            <canvas id="EmployeeProjectHistoryModal" class="chart chart-line"
+                    chart-data="dataForEmployeeProjectHistoryModal" chart-labels="labelsForEmployeeProjectHistoryModal" chart-options="OptionsForEmployeeProjectHistoryModal" chart-series="ProjectHistoryEmployeeSeries" chart-colors="colorsForEmployeeProjectHistoryModal">
+            </canvas>
+        </div>
+    </div>
+    <div>
+        <button class="mdl-button mdl-js-button mdl-button--raised" ng-click="CloseModal()">
+            Close
+        </button>
+    </div>
+</div>

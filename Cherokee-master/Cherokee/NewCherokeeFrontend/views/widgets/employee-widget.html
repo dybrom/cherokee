@@ -1,0 +1,52 @@
+<div>
+        <div class="heading1">
+                <h2 style="margin-top:0;">Employees</h2>
+            </div>
+    <div class="row" style="margin:-15px 0 15px 0; display:flex; align-items: flex-end">
+        
+        <div class="col-md-8">
+            <form ng-submit="filter(fil)">
+                <div class="group" style="left:0;margin-bottom:0;">
+                    <input type="text" ng-model="fil" ng-change="filter(fil)" id="searchEmp" placeholder="Enter employee name"><span class="bar"></span><span class="highlight"></span>
+                    <label for="searchEmp">Search Employee</label>
+                    <!--<button type="button" class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-button&#45;&#45;colored">Search</button>&nbsp;-->
+                </div>
+                <div>
+                    &nbsp;&nbsp;
+                </div>
+            </form>
+        </div>
+        <div class="offset-md-1 col-md-3">
+                <a href="" ng-click="add()"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="margin-bottom:20px;background-color: #3cba54;"><b>ADD EMPLOYEE</b></button></a>
+            </div>
+    </div>
+
+    
+
+    <table class="table" style="margin-bottom:20px;">
+        <tr>
+            <th>Employee</th>
+            <th>Role</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="person in people" >
+
+            <td ng-click="view(person)">{{person.firstName}} {{person.lastName}}</td>
+            <td ng-click="view(person)">{{person.position.name}}</td>
+            <td ng-click="view(person)">{{person.email}}</td>
+            <td>
+                <div class="listButtons">
+                    <!--<a href="" ng-click="view(person)"><button class="col-md-3 btn mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-button&#45;&#45;colored" style="margin-right:10px; margin-top: 0;">VIEW</button></a>-->
+                    <a href="" ng-click="edit(person)"><button class="col-md-3 btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-right:10px; margin-top: 0;">EDIT</button></a>
+                    <a href="" ng-click="delete(person)"><button class="col-md-3 btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color: #db3236;margin-top:0;">DELETE</button></a>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div ng-show="showPagination">
+        <h4>Pagination</h4>
+        <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></ul>
+    </div>
+</div>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/projects.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+
+    <title>Projects</title>
+</head>
+<body>
+<div class="container-fluid">
+
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="box-shadow: none">
+            <a class="navbar-brand" href="#">TK</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <div id="profileInfo">
+                                <span>Adi Pandzic</span>
+                                <span>UI/UX Designer</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <form>
+                        <div class="group">
+                            <input type="search" aria-label="Search"><span class="highlight"></span><span class="bar"></span>
+                            <label>Search Projects, Tasks etc.</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+    <nav class="col-md-2 d-none d-md-block sidebar" >
+        <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:63342/TimeKeeperFinalDesign/dashboard.html">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:63342/TimeKeeperFinalDesign/tasks.html">Tasks</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="http://localhost:63342/TimeKeeperFinalDesign/projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Calendar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:63342/TimeKeeperFinalDesign/teams.html">Teams</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:63342/TimeKeeperFinalDesign/employees.html">Employees</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Invoices</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Reports</a>
+            </li>
+
+        </ul>
+
+    </nav>
+    <main class="col-md-10 col-sm-12 col-xs-12">
+
+        <div class="row heading1">
+            <span>Projects</span>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 projectsContainer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h2>TimeKeeper</h2>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="col-md-5 btn btn-primary" style="margin-right:10px;">EDIT</button>
+                                <button class="col-md-5 btn btn-danger">DELETE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="clientInfo">
+                            <img src="img/picture.png" alt="" style="width:4.01vw; height: 4.01vw; border-radius: 50%; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);">
+                            <div style="display: flex; flex-direction: column; align-items:flex-start; justify-content: center; margin-left:15px;">
+                                <span>Client:</span>
+                                <h6>Mistral</h6>
+                            </div>
+                        </div>
+                        <ul style="margin-top:40px;">
+                            <li><div class="Info">
+                                <img src="img/calendar.png" alt="" style="width:2.01vw; height: 2.01vw; ">
+                                <div style="display: flex; flex-direction: column; align-items:flex-start; justify-content: center; margin-left:15px;">
+                                    <span>Begin date:</span>
+                                    <h6>15/01/2018</h6>
+                                </div>
+                            </div></li>
+                            <li><div class="Info">
+                                <img src="img/price-tag.png" alt="" style="width:2.01vw; height: 2.01vw; ">
+                                <div style="display: flex; flex-direction: column; align-items:flex-start; justify-content: center; margin-left:15px;">
+                                    <span>Pricing type:</span>
+                                    <h6>Hourly</h6>
+                                </div>
+                            </div></li>
+                        </ul>
+
+
+
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="teamAssigned scrollbar scrollbar-primary">
+                            <h6>Team: <i>Cherokee</i></h6>
+                            <li>
+                                <div class="Info" style="margin-left:0;">
+                                    <img src="img/user.png" alt="" style="width:3.01vw; height: 3.01vw; ">
+                                    <div style="display: flex; flex-direction: column; align-items:flex-start; justify-content: center; margin-left:15px;">
+                                        <b>John Doe</b>
+                                        <bdi>Software Developer</bdi>
+                                    </div>
+                            </li>
+                            <li>
+                                <div class="Info" style="margin-left:0;">
+                                    <img src="img/user.png" alt="" style="width:3.01vw; height: 3.01vw; ">
+                                    <div style="display: flex; flex-direction: column; align-items:flex-start; justify-content: center; margin-left:15px;">
+                                        <b>Joanna Doe</b>
+                                        <bdi>Project Manager</bdi>
+                                    </div>
+                            </li>
+                            <li>
+                                <div class="Info" style="margin-left:0;">
+                                    <img src="img/user.png" alt="" style="width:3.01vw; height: 3.01vw; ">
+                                    <div style="display: flex; flex-direction: column; align-items:flex-start; justify-content: center; margin-left:15px;">
+                                        <b>Mark Smith</b>
+                                        <bdi>UI/UX Designer</bdi>
+                                    </div>
+                            </li>
+                            <li>
+                                <div class="Info" style="margin-left:0;">
+                                    <img src="img/user.png" alt="" style="width:3.01vw; height: 3.01vw; ">
+                                    <div style="display: flex; flex-direction: column; align-items:flex-start; justify-content: center; margin-left:15px;">
+                                        <b>Bill Black</b>
+                                        <bdi>QA Engineer</bdi>
+                                    </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-4 description">
+                        <span>Description:</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium adipisci aliquam asperiores aspernatur blanditiis consectetur consequuntur dignissimos distinctio dolorum, eligendi esse excepturi facilis fugiat fugit ipsam iure laudantium maxime mollitia non nostrum nulla obcaecati odio omnis pariatur provident qui quia quis repudiandae sequi sit tempore totam, veniam. Alias debitis earum laboriosam quae veritatis voluptatibus? Eos ex libero neque quibusdam.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-7 col-sm-12 col-xs-12">
+                                <div class="totalHoursGraph">
+                                    <img src="img/graph.png" alt="" style="width:350px;">
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-12 col-xs-12">
+                                <div class="Info" style="display: flex; flex-direction: column; align-items:flex-start; justify-content: center;">
+                                    <span>Amount:</span>
+                                    <h6 style="font-weight: 900; font-size:23px; color:#474747;">$39900.00</h6>
+                                </div>
+                                <div class="Info" style="display: flex; flex-direction: column; align-items:flex-start; justify-content: center;">
+                                    <span>Amount per capita:</span>
+                                    <h6 style="font-weight: 900; font-size:23px; color:#474747;">$9997.50</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="img/graph2.png" alt="" style="width:300px; padding-right:40px;">
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-2 d-sm-none d-xs-none d-md-block projectSelect">
+                <div class="row" style="padding:0;">
+                    <div class="col-md-12">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item"><span>ALL PROJECTS</span></li>
+                            <li><button class="offset-md-2 col-md-8 btn btn-success" style="margin-bottom:15px;">ADD</button></li>
+                            <li class="nav-item"><a class="nav-link active"href="#">
+                                <strong>TimeKeeper</strong><br>
+                            </a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href=""><strong>Falcon Project</strong><br>
+                            </a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href=""><strong>Dakota</strong><br>
+                            </a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href=""><strong>Apache</strong><br>
+                            </a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href=""><strong>Navajo</strong><br>
+                            </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </main>
+
+
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+</body>
+</html>

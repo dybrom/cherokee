@@ -1,0 +1,53 @@
+<div>
+<div class="col-md-2">Year: <input type="number" class="form-control" ng-model="year" min="2016" max="2018"></div>
+<div class="col-md-2">Month: <select class="form-control" ng-model="month"
+                                     ng-options="months.indexOf(ind) as ind for ind in months"></select></div>
+<div class="col-md-1" style="margin-top:18px">
+    <button type="button"
+            class="btn btn-primary"
+            ng-click="listReport()">LIST!
+    </button>
+</div>
+</div>
+<br>
+<br>
+<br>
+<div ng-show="showing">
+    <div ng-repeat="project in report.projects" ng-init="index = $index" >
+        <div>
+            <h2>{{project.project}}</h2>
+            <h4>Total hours: {{project.hours}}</h4>
+        </div>
+        <div>
+        <table class="table">
+            <tr>
+                <th>Employee</th>
+                <th>Hours</th>
+            </tr>
+
+        <tr ng-repeat="employee in report.items | orderBy : '-hours[index]'" ng-show="employee.hours[index]>0">
+
+            <td>{{employee.employee}}</td>
+            <td>{{employee.hours[index]}}</td>
+
+        </tr>
+
+        </table>
+        </div>
+    </div>
+
+</div>
+
+<div ng-show="showing">
+    <h2>Employees and total hours in this month</h2>
+    <table class="table">
+        <tr>
+            <th>Employee</th>
+            <th>Total hours</th>
+        </tr>
+        <tr ng-repeat="employee in report.items | orderBy : '-total'">
+            <td>{{employee.employee}}</td>
+            <td>{{employee.total}}</td>
+        </tr>
+    </table>
+</div>

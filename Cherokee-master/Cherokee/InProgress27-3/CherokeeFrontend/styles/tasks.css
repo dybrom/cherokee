@@ -1,0 +1,67 @@
+ul {
+
+    list-style-type: none;
+}
+
+.btn-success {
+
+    margin: 15px 0 0 20px;
+}
+
+.col-md-10 ul {
+
+    margin-top:1.4rem;
+}
+
+.taskList {
+
+    list-style-type: none;
+}
+
+.cardBox {
+
+    width:100%;
+    padding:10px 0 10px 15px;
+
+}
+
+.cardBox h2 {
+
+    font-size:1.51vw;
+    font-weight:bolder;
+    color:#434343;
+}
+
+.cardBox h3 {
+
+    color:#588FC7;
+    font-size:1.09vw;
+}
+
+.cardBox h4 {
+
+    color: #a0a0a0;
+    font-size: 0.91vw;
+    font-weight: 300;
+}
+
+/*.cardBox span {*/
+
+    /*color:#C8C8C8;*/
+    /*font-size:0.72vw;*/
+/*}*/
+
+.cardBox p {
+
+    color: #3A3A3A;
+    font-size:0.83vw;
+    text-align: justify;
+}
+
+.taskDetails bdi {
+
+    font-size: 0.8vw;
+    margin-left:5px;
+}
+
+i

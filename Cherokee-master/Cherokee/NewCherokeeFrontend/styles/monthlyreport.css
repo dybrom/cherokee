@@ -1,0 +1,45 @@
+.circleRedBorder {
+
+    border-radius: 50%;
+    width:110px;
+    height:110px;
+    border: 5px solid #db3236;
+    padding:17px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.circleRedBorder > strong {
+
+    font-weight: 800;
+    font-size: 40px;
+}
+
+.monthOverview {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.monthOverview > strong { 
+
+    font-size: 36px;
+    margin-top:10px;
+}
+
+.monthOverview  > span {
+
+    font-weight: bold;
+    font-size: 16px;
+    margin-top:5px;
+}
+
+.monthOverview > i {
+
+    color:rgb(189, 189, 189);
+    font-size:48px;
+}

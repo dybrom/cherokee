@@ -1,0 +1,13 @@
+<h1>Customers</h1>
+<h2>{{message}}</h2>
+
+<div ng-controller="custController" style="margin-bottom:15px;">
+    <a href="" ng-click="add(data)"><button class="col-md-2 btn btn-success"><b>ADD CUSTOMER</b></button></a>
+</div>
+
+
+
+
+<div ng-repeat="item in customers">
+    <customer data="item"></customer>
+</div>

@@ -1,0 +1,34 @@
+<div class="row" ng-show="teamsShow">
+    <div class="col-md-4"><h1>Team dashboard</h1></div>
+    <div class="col-md-3">Team:
+        <select ng-model="teamId" class="form-control"
+                ng-options="team.id as team.name for team in teams"
+                ng-value="team.id">{{team.name}}}</option>
+        </select>
+    </div>
+    <div class="col-md-2">Year: <input type="number" class="form-control" ng-model="year" min="2016" max="2018"></div>
+    <div class="col-md-2">Month: <select class="form-control" ng-model="month"
+                                         ng-options="months.indexOf(ind) as ind for ind in months"></select></div>
+    <div class="col-md-1" style="margin-top:18px">
+        <button type="button"
+                class="btn btn-primary"
+                ng-click="listReport()">LIST!
+        </button>
+    </div>
+</div>
+<div>
+{{report}}
+</div>
+<div style="width:600px;">
+
+    <canvas id="teamTotalHoursChart"></canvas>
+
+    <div id="teamDashboardCharts"></div>
+
+    <canvas id="teamDashMissingEntries" width="800" height="450"></canvas>
+
+    <canvas id="teamDashPTOByMember" width="800" height="450"></canvas>
+
+    <canvas id="teamDashOvertimeHoursByMember" width="800" height="450"></canvas>
+
+</div>

@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="tm-new-modal-title">ADD NEW TEAM</h3>
+</div>
+
+<div class="modal-body" id="tm-new-modal-body">
+    <form name="valForm">
+        <div class="row">
+            <div class="col-md-4 label"><span style="color:red;">* </span>Id:</div>
+            <div class="col-md-6"><input name="valID" type="text" class="form-control" ng-model="team.id" placeholder="(ex. GTA)" required></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 label"><span style="color:red;">* </span>Name:</div>
+            <div class="col-md-6"><input name="valName" type="text" class="form-control" ng-model="team.name" placeholder="(ex. Grand Theft Auto)" required></div>
+        </div>
+    </form>
+
+    <div class="row" style="margin-top: 5px;">
+            <div class="col-md-12 text-center"><span style="color:red;">* -> Required fields!</span></div>
+    </div>
+</div>
+
+<div class="row modal-footer">
+    <a href="" ng-click="add(team)" class="col-md-5"><button class="btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-right:10px; background-color: #3cba54;" 
+        ng-disabled="valForm.valID.$touched && valForm.valID.$invalid ||
+        valForm.valName.$touched && valForm.valName.$invalid">ADD</button></a>
+    <a href="" ng-click="cancel(team)"class="col-md-5"><button class="mdl-button mdl-js-button mdl-button--raised">CANCEL</button></a>
+</div>

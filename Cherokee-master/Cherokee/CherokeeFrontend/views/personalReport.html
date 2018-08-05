@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-md-4"><h1>Personal Report</h1></div>
+    <div class="col-md-3" ng-show="empsShow">Employee:
+        <select ng-model="empId" class="form-control"
+                ng-options="person.id as person.name for person in people"
+                ng-value="person.id">{{person.name}}}</option>
+        </select>
+    </div>
+    <div class="col-md-2">Year: <input type="number" class="form-control" ng-model="year" min="2016" max="2018"></div>
+    <div class="col-md-2">Month: <select class="form-control" ng-model="month"
+                                         ng-options="months.indexOf(ind) as ind for ind in months"></select></div>
+    <div class="col-md-1" style="margin-top:18px">
+        <button type="button"
+                class="btn btn-primary"
+                ng-click="listReport()">LIST!
+        </button>
+    </div>
+</div>
+    <div ng-show="showing">
+        <br>
+        <div>
+            <h3>Employee: {{report.employee.name}}</h3>
+        </div>
+        <div>
+            <h3>Overtime Hours: {{report.overtimeHours}}</h3>
+        </div>
+        <div>
+            <h3>Missing Entries: {{report.missingEntries}}</h3>
+        </div>
+        <div>
+            <h3>Working Days: {{report.workingDays}}</h3>
+        </div>
+        <div>
+            <h3>Percentage of working days: {{report.percentageOfWorkingDays}}%</h3>
+        </div>
+        <div>
+            <h3>Vacation Days: {{report.vacationDays}}</h3>
+        </div>
+        <div>
+            <h3>Bussiness Absence: {{report.businessAbscenceDays}}</h3>
+        </div>
+        <div>
+            <h3>Public holiday days: {{report.publicHolidayDas}}</h3>
+        </div>
+        <div>
+            <h3>Sick leave days: {{report.sickLeaveDays}}</h3>
+        </div>
+        <div>
+            <h3>Religious days: {{report.religiousDays}}</h3>
+        </div>
+        <div>
+            <h3>Other abscence days: {{report.otherAbscenceDays}}</h3>
+        </div>
+        <div>
+            <h3>Total hours: {{report.totalHours}}</h3>
+        </div>
+        <div>
+            <canvas id="workingHoursChart">
+            </canvas>
+
+            <canvas id="utilizationChart">
+            </canvas>
+        </div>
+
+
+</div>

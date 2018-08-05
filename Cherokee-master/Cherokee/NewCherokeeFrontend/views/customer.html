@@ -1,0 +1,118 @@
+<div style="margin-top:20px;">
+    <div class="row">
+        <div class="col-md-12 projectsContainer">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row" style="margin-bottom:15px;">
+                        <div class="col-md-8">
+                            <div style="display: flex; flex-direction: row;">
+                                <div class="monogram">
+                                    <span>{{customer.monogram}}</span>
+                                </div>
+                                <h2>{{customer.name}}</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="" ng-click="edit(customer)">
+                                <button class="col-md-5 btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-right:10px;">EDIT</button>
+                            </a>
+                            <a href="" ng-click="delete(customer)">
+                                <button class="col-md-5 btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color: #db3236;">DELETE</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+
+                    <div class="clientInfo" style="display: flex; flex-direction: column">
+                        <div class="Info" style="margin-bottom:10px;">
+                            <span>
+                                <i class="fa fa-phone infoText"></i>
+                            </span>
+                            <div style=" margin-left:19px;">
+
+                                <span class="infoText">{{customer.phone}}</span>
+                            </div>
+                        </div>
+                        <div class="Info" style="margin-bottom:10px;">
+                            <span>
+                                <i class="fa fa-envelope infoText"></i>
+                            </span>
+                            <div style=" margin-left:15px;">
+
+                                <span class="infoText">{{customer.email}}</span>
+                            </div>
+                        </div>
+                        <div class="Info" style="margin-bottom:10px;">
+                            <span>
+                                <i class="fa fa-user infoText"></i>
+                            </span>
+                            <div style=" margin-left:19px;">
+
+                                <span class="infoText">{{customer.contact}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" style="margin-top:20px;">
+
+                    <strong style="font-size:24px;">Projects:</strong>
+                    <br>
+                    <br>
+                    <div ng-repeat="project in customer.projects">
+                        <span class="infoText">{{project.name}}</span>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- <div>
+    <div class="col-md-5" style="margin-bottom:30px;">
+        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+
+            <div class="mdl-card__title" style="background:url(images/{{data.monogram}}.jpg);background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity:0.7;">
+                <h2 class="mdl-card__title-text"><strong style="font-weight:900 !important;">{{customer.name}}</strong></h2>
+            </div>
+
+            <div class="mdl-card__supporting-text">
+                <div class="row">
+                    <div class="col-md-7">
+                        <strong>Contact info:</strong>
+                        <ul>
+                            <li><i class="fa fa-user"></i>&nbsp;&nbsp;{{customer.contact}}</li>
+                            <li><i class="fa fa-envelope"></i>&nbsp;&nbsp;{{customer.email}}</li>
+                            <li><i class="fa fa-phone"></i>&nbsp;&nbsp;{{customer.phone}}</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5">
+                        <strong>Projects:</strong><br><br>
+                        <div ng-repeat="project in customer.projects">
+                            <span>{{project.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mdl-card__actions mdl-card--border">
+            </div>
+
+        </div>
+    </div>
+</div> -->

@@ -1,0 +1,11 @@
+<h1>
+    Teams
+    <a href="" ng-click="add()">
+        <button class="btn btn-success" style="margin-left:10px;"><b>ADD TEAM</b></button>
+    </a>
+</h1>
+
+<h2>{{message}}</h2>
+<div ng-repeat="team in teams">
+    <team team="team"></team>
+</div>

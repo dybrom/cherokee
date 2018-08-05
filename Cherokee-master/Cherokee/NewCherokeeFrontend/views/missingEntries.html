@@ -1,0 +1,37 @@
+<div >
+    <div class="row">
+        <div class="col-md-3">Year: <input type="number" class="form-control" ng-model="year" min="2016" max="2018" ></div>
+        <div class="col-md-4">Month: <select class="form-control" ng-model="month"
+                                             ng-options="months.indexOf(ind) as ind for ind in months"
+        ></select></div>
+        <button type="button"
+                class="btn btn-primary"
+                ng-click="listReport()">LIST!
+        </button>
+    </div>
+    <div>
+        <table class="table">
+            <tr>
+                <th>Employee</th>
+                <th>No. of missing entries</th>
+                <th>Missing Days</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="person in entriesreport.employees" >
+                <td style="vertical-align:center;">{{person.name}}</td>
+                <td style="vertical-align:center;">{{person.totalMissingEntries}}</td>
+                <td style="vertical-align:center;">
+                        <span ng-repeat="day in person.missingEntries">
+                            <span>{{day.day}} &nbsp;</span>
+                        </span>
+                </td>
+                <td>
+                    
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" style="text-align:center; background-color: #db3236;" ng-click="deleteEntry($index)">Delete</button>
+                    
+                </td>
+            </tr>
+            <div><button class="col-md-3 mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="margin:20px 0 15px 0; background-color: #3cba54;" ng-click="SendEmails()"> Send Emails</button></div>
+        </table>
+    </div>
+</div>

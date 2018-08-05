@@ -1,0 +1,150 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Add new Project: {{project.name}}</h3>
+</div>
+
+<div class="modal-body" id="modal-body">
+
+    <input type="hidden" ng-model="project.id">
+    <div class="row">
+        <div class="col-md-4 label">Name:</div>
+        <div class="col-md-6"><input type="text" class="form-control" ng-model="project.name" placeholder="Input new Project's name"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 label">Customer:</div>
+
+        <div class="col-md-6">
+            <select ng-model="project.customer.Id" class="form-control"
+                    ng-options="customer.id as customer.name for customer in customers"
+                    ng-value="customer.id">{{customer.name}}</option>
+                <option value="">-- choose an option --</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 label">Team:</div>
+
+        <div class="col-md-6">
+            <select ng-model="project.team.Id" class="form-control"
+                    ng-options="team.id as team.name for team in teams"
+                    ng-value="team.id">{{team.name}}</option>
+                <option value="">-- choose an option --</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 label">Amount:</div>
+        <div class="col-md-6"><input type="text" class="form-control" ng-model="project.amount" placeholder="Pay!"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 label">Description:</div>
+        <div class="col-md-6"><textarea style="resize:vertical; min-height:100px; max-height:150px;" type="text" class="form-control" ng-model="project.description" placeholder="Add description"></textarea></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 label">Begin Date:</div>
+        <div class="col-md-6"><input type="date" class="form-control" ng-model="project.beginDate"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 label">End Date:</div>
+        <div class="col-md-6"><input type="date" class="form-control" ng-model="project.endDate"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 label">Monogram:</div>
+        <div class="col-md-6"><input type="url" class="form-control" ng-model="project.monogram" placeholder="Paste Monogram Url"></div>
+    </div>
+
+    <!--<div class="row">
+        <div class="col-md-4 label">Status:</div>
+        <div class="col-md-7">
+            <label class="radio-inline"><input type="radio" ng-model="project.status" value="0">In Progress</label>
+            <label class="radio-inline"><input type="radio" ng-model="project.status" value="1">On Hold</label>
+            <label class="radio-inline"><input type="radio" ng-model="project.status" value="2">Finished</label>
+            <label class="radio-inline"><input type="radio" ng-model="project.status" value="3">Canceled</label>
+        </div>
+    </div>-->
+
+   <!-- <div class="row">
+        <div class="col-md-4 label">Status:</div>
+
+        <div class="col-md-6">
+            <select ng-model="project.status" class="form-control">
+                <option ng-model="project.status" value="InProgress">In Progress</option>
+                <option ng-model="project.status" value="OnHold">On Hold</option>
+                <option ng-model="project.status" value="Finished">Finished</option>
+                <option ng-model="project.status" value="Canceled">Canceled</option>
+            </select>
+        </div>
+
+    </div>-->
+
+    <!--<div class="row">
+        <div class="col-md-4 label">Pricing:</div>
+        <div class="col-md-7">
+            <label class="radio-inline"><input type="radio" ng-model="project.pricing" value="0">Hourly Rate</label>
+            <label class="radio-inline"><input type="radio" ng-model="project.pricing" value="1">Per Capita Rate</label>
+            <label class="radio-inline"><input type="radio" ng-model="project.pricing" value="2">Fixed Price</label>
+            <label class="radio-inline"><input type="radio" ng-model="project.pricing" value="3">Not Billable</label>
+        </div>
+    </div>-->
+
+   <!-- <div class="row">
+        <div class="col-md-4 label">Pricing:</div>
+
+        <div class="col-md-6">
+            <select ng-model="project.pricing" class="form-control">
+                <option value="">-- choose an option --</option>
+                    <option value="0">Hourly Rate</option>
+                    <option value="1">Per Capita Rate</option>
+                    <option value="2">Fixed Price</option>
+                    <option value="3">Not Billable</option>
+            </select>
+        </div>
+
+    </div>-->
+
+    <div class="row">
+        <div class="col-md-4 label">Pricing:</div>
+
+        <div class="col-md-6">
+            <select ng-model="project.pricing" class="form-control">
+
+                <option value="">-- choose an option --</option>
+                <option ng-model="project.pricing" value="HourlyRate">Hourly Rate</option>
+                <option ng-model="project.pricing" value="PerCapitaRate">Per Capita Rate</option>
+                <option ng-model="project.pricing" value="FixedPrice">Fixed Price</option>
+                <option ng-model="project.pricing" value="NotBillable">Not Billable</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 label">Status:</div>
+
+        <div class="col-md-6">
+            <select ng-model="project.status" class="form-control">
+
+                <option value="">-- choose an option --</option>
+                <option ng-model="project.status" value="InProgress">In Progress</option>
+                <option ng-model="project.status" value="OnHold">On Hold</option>
+                <option ng-model="project.status" value="Finished">Finished</option>
+                <option ng-model="project.status" value="Canceled">Canceled</option>
+            </select>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="save(project)">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel(project)">Cancel</button>
+</div>

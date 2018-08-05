@@ -1,0 +1,53 @@
+<div>
+
+    <div style="margin-bottom:15px;">
+
+        <span><label>Search: <form ng-submit="filter(fil)"><input type="text" ng-model="fil"/></form></label></span>
+
+
+
+    </div>
+    <div>
+        <a href="" ng-click="add()"><button class="col-md-2 btn btn-success"><b>ADD EMPLOYEE</b></button></a>
+    </div>
+    <table class="table">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Role</th>
+            <th>Settings</th>
+        </tr>
+
+        <tr ng-repeat="person in people ">
+            <td>{{person.firstName}}</td>
+            <td>{{person.lastName}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.phone}}</td>
+            <td><img style="width:100px; height:50px;" ng-src="{{person.image}}"></td>
+            <td>{{person.position.name}}</td>
+            <td>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="" ng-click="edit(person)">
+                            <button class="col-md-5 btn btn-primary" style="margin-right:5px;">
+                                <b>EDIT</b>
+                            </button>
+                        </a>
+                        <a href="" ng-click="delete(person)">
+                            <button class="col-md-5 btn btn-danger">
+                                <b>DELETE</b>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div ng-show="showPagination">
+        <h4>Pagination</h4>
+        <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></ul>
+    </div>
+</div>

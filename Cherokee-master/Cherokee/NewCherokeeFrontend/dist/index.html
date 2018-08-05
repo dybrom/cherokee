@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html ng-app="timeKeeper">
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="app.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="lib.min.js"></script>
+    <script src="app.min.js"></script>
+    <script src="template.js"></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
+
+    <script>
+        var btnContainer = document.getElementById("sidebarNav");
+
+        // Get all buttons with class="btn" inside the container
+        var btns = btnContainer.getElementsByClassName("nav-link");
+
+        // Loop through the buttons and add the active class to the current/clicked button
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+    <title>TimeKeeper</title>
+</head>
+
+<body>
+<div class="container-fluid main-wrapper">
+
+    <div class="row">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <a class="navbar-brand" href="#/personalreport">TimeKeeper</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="justify-content: flex-end;">
+                    <div class="navbar-nav">
+                        <ul class="navbar-nav mr-auto" style="align-items: center;">
+                            <li class="nav-item">
+                                <a href="#/profile">
+                                    <div id="profileInfo">
+                                        <div>
+                                            <img src="{{currentUser.image}}" alt="">
+                                        </div>
+                                        <div style="display:flex; flex-direction: column; align-items: flex-start;">
+                                            <span>{{currentUser.name}}</span>
+                                            <span>{{currentUser.role}}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li ng-hide="currentUser.id==0"><a href="#/logout"><i class="fa fa-sign-out" style="font-size:20px; color:white;"></i></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <nav ng-hide="currentUser.id==0" class="col-md-2 d-none d-md-block sidebar scrollbar-primary">
+
+            <ul id="sidebarNav"class="nav nav-pills flex-column">
+
+                    <span ng-init="showDashboards = false" ng-click="showDashboards = !showDashboards"><li class="nav-item droppable">
+                        <i class="material-icons">dashboard</i>
+                        <a class="nav-link" style="color:#9b9b9b;">DASHBOARDS</a>
+                        <i style="font-weight: 900; font-size:20px;" ng-class="{true: 'fa fa-angle-right', false: 'fa fa-angle-down'}[showDashboards]"></i>
+                    </li></span>
+                <span ng-hide="currentUser.id==0"><li class="nav-item" ng-show="showDashboards">
+                        <a class="nav-link" style="margin-left:22px; opacity:0.8;" href="#/personalreport" >PERSONAL DASHBOARD</a>
+                    </li></span>
+                <span ng-show="currentUser.role=='Administrator' || currentUser.role=='Team Lead' || currentUser.teams.length > 0"><li class="nav-item" ng-show="showDashboards">
+                        <a class="nav-link" style="margin-left:22px; opacity:0.8;" href="#/teamdashboard">TEAM DASHBOARD</a>
+                    </li></span>
+                <span ng-show="currentUser.role=='Administrator'"><li class="nav-item" ng-show="showDashboards">
+                        <a class="nav-link" style="margin-left:22px; opacity:0.8;" href="#/companydashboard">COMPANY DASHBOARD</a>
+                    </li></span>
+                <span ng-init="showDatabases = false" ng-show="currentUser.role == 'Administrator'" ng-click="showDatabases = !showDatabases"><li class="nav-item droppable">
+                            <i class="material-icons">view_list</i>
+                            <a class="nav-link" style="color:#9b9b9b;">DATABASE</a>
+                            <i style="font-weight: 900; font-size:20px;" ng-class="{true: 'fa fa-angle-right', false: 'fa fa-angle-down'}[showDatabases]"></i>
+                        </li></span>
+                <span ng-show="currentUser.role=='Administrator'"><li class="nav-item" ng-show="showDatabases">
+                        <i style="margin-left:22px; opacity:0.8;" class="fa fa-sitemap"></i><a class="nav-link"  href="#/projects">PROJECTS</a>
+                    </li></span>
+                <span ng-show="currentUser.role=='Administrator'"><li class="nav-item" ng-show="showDatabases">
+                        <i style="margin-left:22px; opacity:0.8;" class="fa fa-address-book"></i><a class="nav-link"  href="#/customers">CUSTOMERS</a>
+                    </li></span>
+                <span ng-show="currentUser.role=='Administrator'"><li class="nav-item" ng-show="showDatabases">
+                        <i style="margin-left:22px; opacity:0.8;" class="fa fa-users"></i><a class="nav-link"  href="#/teams">TEAMS</a>
+                    </li></span>
+                <span ng-show="currentUser.role=='Administrator'"><li class="nav-item" ng-show="showDatabases">
+                        <i style="margin-left:22px; opacity:0.8;" class="fa fa-briefcase"></i><a class="nav-link"  ng-class="getClass('/employees')" href="#/employees">EMPLOYEES</a>
+                    </li></span>
+                <span ng-hide="currentUser.id==0"><li class="nav-item">
+                        <i class="material-icons">perm_contact_calendar</i>
+                    <a class="nav-link" href="#/calendar">CALENDAR</a>
+                    </li></span>
+                <span ng-hide="currentUser.id==0"><li class="nav-item">
+                        <i class="material-icons">payment</i>
+                    <a class="nav-link" href="#/billings">BILLINGS</a>
+                    </li></span>
+                <span ng-init="showReports = false"ng-show="currentUser.role=='Administrator'" ng-click="showReports = !showReports"><li class="nav-item droppable">
+                        <i class="fa fa-pie-chart" style="font-size:23px;"></i>
+                        <a class="nav-link" style="color:#9b9b9b;" >REPORTS</a>
+                        <i style="font-weight: 900; font-size:20px;" ng-class="{true: 'fa fa-angle-right', false: 'fa fa-angle-down'}[showReports]"></i>
+                    </li></span>
+                <span ng-show="currentUser.role=='Administrator'"><li class="nav-item" ng-show="showReports" >
+                        <a class="nav-link" style="margin-left:22px; opacity:0.8;" href="#/monthlyreport">MONTHLY REPORT</a>
+                    </li></span>
+                <span ng-show="currentUser.role=='Administrator'"><li class="nav-item" ng-show="showReports" >
+                        <a class="nav-link" style="margin-left:22px; opacity:0.8;" href="#/annualreport">ANNUAL REPORT</a>
+                    </li></span>
+                <span ng-show="currentUser.role=='Administrator'"><li class="nav-item" ng-show="showReports" >
+                        <a class="nav-link" style="margin-left:22px; opacity:0.8;"href="#/projecthistory">PROJECT HISTORY</a>
+                    </li></span>
+
+                <span ng-show="currentUser.role=='Administrator'"><li class="nav-item" ng-show="showReports" >
+                        <a class="nav-link" style="margin-left:22px; opacity:0.8;"href="#/missingentries">MISSING ENTRIES</a>
+                    </li></span>
+
+            </ul>
+        </nav>
+        <div class="col-md-10" style="margin-left: 17%;margin-top: 85px"><div ng-view></div></div>
+    </div>
+
+    <toaster-container></toaster-container>
+
+
+</div>
+
+<div id="loader" ng-show="waitForLoad"><div class="cssload-clock"></div></div>
+</body>
+</html>

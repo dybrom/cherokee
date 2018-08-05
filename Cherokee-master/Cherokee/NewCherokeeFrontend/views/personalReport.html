@@ -1,0 +1,80 @@
+<div class="heading1">
+    <h2 style="margin-top:0;">Personal Dashboard</h2>
+</div>
+<div class="row">
+    <div class="col-md-3" ng-show="currentUser.role=='Administrator' || currentUser.teams.length>0">
+        Employee:
+        <select ng-model="empId" class="form-control"
+                id="employee"
+                ng-options="person.id as person.name for person in people"
+                ng-value="person.id"><option>{{person.name}}}</option>
+        </select>
+
+    </div>
+
+
+    <div class="col-md-2">Year: <input type="number" class="form-control" ng-model="year" min="2016" max="2018"></div>
+    <div class="col-md-2">Month: <select class="form-control" ng-model="month"
+                                         ng-options="months.indexOf(ind) as ind for ind in months"></select></div>
+    <div class="col-md-1" style="margin-top:18px">
+        <button type="button"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                ng-click="listReport()">LIST
+        </button>
+    </div>
+
+</div>
+<br>
+<br>
+    <div ng-show="showing">
+        <br>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="cardBox">
+                <h5>Hours By project</h5>
+                <canvas id="hoursByProject" class="chart chart-bar"
+                        chart-data="dataForHoursByProject" chart-labels="labelsForHoursByProject" chart-options="OptionsForHoursByProject" chart-colors="colorsForHoursByProject">
+                </canvas>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="cardBox">
+                <h5>Utilization:{{report.percentageOfWorkingDays}}%</h5>
+                <canvas id="utilization" class="chart chart-bar"
+                        chart-data="dataForUtilization" chart-labels="labelsForUtilization" chart-options="OptionsForUtilization" chart-colors="colorsForUtilization">
+                </canvas>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="cardBox">
+                <h5>Total hours in month and year</h5>
+                <canvas id="hoursInMonthVSYear" class="chart chart-doughnut"
+                        chart-data="dataForMVSY" chart-labels="labelsForMVSY" chart-options="OptionsForMVSY" chart-colors="colorsForMVSY">
+                </canvas>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="cardBox">
+                <h5>Missing entries: {{report.missingEntries}}</h5>
+                <canvas id="DayStatistics" class="chart chart-bar"
+                        chart-data="dataForDayStatistic" chart-labels="labelsForDayStatistic" chart-options="OptionsForDayStatistic" chart-colors="colorsForDayStatistic" >
+                </canvas>
+                </div>
+            </div>
+        </div>
+
+        <!--
+        <div style="width:400px;">
+            <canvas id="workingHoursChart">
+            </canvas>
+
+            <canvas id="utilizationChart">
+            </canvas>
+        </div>!-->
+
+
+</div>

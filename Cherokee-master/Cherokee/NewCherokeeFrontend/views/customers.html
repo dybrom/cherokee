@@ -1,0 +1,41 @@
+<div class="heading1">
+        <h2 style="margin-top:0;">Customers</h2>
+</div>
+<div class="row" style="margin: -15px 0 15px 0; display:flex; align-items: flex-end">
+    
+    <div class="col-md-8">
+        <form ng-submit="filter(fil)">
+            <div class="group" style="left:0; margin-bottom:0;">
+                <input type="text" ng-model="fil" id="searchCust" placeholder="Enter customer name"><span class="bar"></span><span class="highlight"></span>
+                <label for="searchCust">Search Customer</label>
+                <!--<button type="button" class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-button&#45;&#45;colored">Search</button>&nbsp;-->
+            </div>
+            <div>
+                &nbsp;&nbsp;
+            </div>
+        </form>
+    </div>
+    <div class="offset-md-1 col-md-3">
+        <a href="" ng-click="add()"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+        style="background-color: #3cba54;"><b>ADD CUSTOMER</b></button></a></div>
+</div>
+
+<div style="margin-bottom:15px;">
+    <table class="table" style="margin-bottom:20px;">
+        <tr>
+            <th>Customer</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="customer in customers | filter:fil">
+            <td ng-click="view(customer)">{{customer.name}}</td>
+            <td ng-click="view(customer)">{{customer.email}}</td>
+            <td>
+                <div class="listButtons">
+                    <a href="" ng-click="edit(customer)"><button class="col-md-3 btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-right:10px;">EDIT</button></a>
+                    <a href="" ng-click="delete(customer)"><button class="col-md-3 btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color: #db3236;">DELETE</button></a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

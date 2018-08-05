@@ -1,0 +1,50 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">{{customer.name}}</h3>
+</div>
+
+<div class="modal-body" id="modal-body">
+    <form name="valForm">
+        <input type="hidden" ng-model="customer.id">
+        <div class="row">
+            <div class="col-md-4 label"><span style="color:red;">* </span>Name:</div>
+            <div class="col-md-6"><input name="valName" type="text" class="form-control" ng-model="customer.name" placeholder="(ex. Attaco)" required></div>
+            
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label"><span style="color:red;">* </span>Contact:</div>
+            <div class="col-md-6"><input name="valContact" type="text" class="form-control" ng-model="customer.contact" placeholder="(ex. Merkator)" required></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label"><span style="color:red;">* </span>Email:</div>
+            <div class="col-md-6"><input name="valEmail" type="email" class="form-control" ng-model="customer.email" placeholder="(ex. attaco@gmail.com)" required></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label"><span style="color:red;">* </span>Phone:</div>
+            <div class="col-md-6"><input name="valPhone" type="text" class="form-control" ng-model="customer.phone" placeholder="(ex. +387 62 123 123)" required></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label">Status:</div>
+            <div class="col-md-6">
+                <label class="radio-inline"><input type="radio" ng-model="customer.status" value="1">Client</label>
+                <label class="radio-inline"><input type="radio" ng-model="customer.status" value="0">Prospect</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center"><span style="color:red;">* -> Required fields!</span></div>
+        </div>
+    </form>
+</div>
+
+<div class="row modal-footer">
+    <a href="" ng-click="save(customer)" class="col-md-5"><button class="btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-right:10px; background-color: #3cba54;"
+        ng-disabled="valForm.valName.$touched && valForm.valName.$invalid ||
+                     valForm.valContact.$touched && valForm.valContact.$invalid ||
+                     valForm.valEmail.$touched && valForm.valEmail.$invalid ||
+                     valForm.valPhone.$touched && valForm.valPhone.$invalid">SAVE</button></a>
+    <a href="" ng-click="cancel()"class="col-md-5"><button class="mdl-button mdl-js-button mdl-button--raised">CANCEL</button></a>
+</div>

@@ -1,0 +1,50 @@
+<div class="heading1" >
+    <h2 style="margin-top:0;">Billings</h2>
+</div>
+
+<div class="row" style="margin-bottom:15px;">
+
+
+    <div class="col-md-3">Year: <input type="number" class="form-control" ng-model="year" min="2016" max="2018"></div>
+    <div class="col-md-3">Month: <select class="form-control" ng-model="month"
+                                         ng-options="months.indexOf(ind) as ind for ind in months"></select></div>
+    <div class="col-md-1" style="margin-top:18px">
+        <button type="button"
+                class="col-md-3 btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                ng-click="billingReport()">LIST!
+        </button>
+    </div>
+</div>
+<div ng-show="showing">
+    <div class="row">
+        <table class="table">
+            <tr>
+                <th>Project Name</th>
+                <th>Customer Name</th>
+                <th>Invoice Number</th>
+                <th>Invoice Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="invoice in billings" style="cursor:default;">
+                <td>{{invoice.projectName}}</td>
+                <td>{{invoice.name}}</td>
+                <td>{{invoice.invoiceNumber}}</td>
+                <td>Invoice Number</td>
+                <td>{{invoice.amount}}</td>
+                <td>{{invoice.status}}</td>
+                <td>
+                    <div>
+
+                        <a href="" ng-click="edit(invoice)"><button class="col-md-3 btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-right:10px;">EDIT</button></a>
+                        <a href="" ng-click="delete(invoice)"><button class="col-md-3 btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color: #db3236;">DELETE</button></a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!--<div>-->
+<!--{{report}}-->
+<!--</div>-->

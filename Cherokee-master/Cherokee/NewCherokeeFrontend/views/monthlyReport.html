@@ -1,0 +1,100 @@
+<div class="heading1">
+    <h2 style="margin-top:0;">Monthly Report</h2>
+</div>
+<div>
+    <div class="row" style="display: flex;align-items: center;">
+
+
+        <div class="col-md-3">Year: <input type="number" class="form-control" ng-model="year" min="2016" max="2018" ></div>
+        <div class="col-md-4">Month: <select class="form-control" ng-model="month"
+                                             ng-options="months.indexOf(ind) as ind for ind in months"
+                                            ></select></div>
+        <div class="col-md-1" style="margin-top:18px">
+            <button type="button"
+                    class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                    ng-click="listReport()">LIST
+            </button>
+        </div>
+
+    </div>
+</div>
+<br>
+<br>
+<br>
+<div ng-show="showing" style="margin-left:20px;">
+
+    <div class="row" style="display: flex; justify-content:center; margin-bottom:60px;">
+
+
+        <div class="col-md-3 monthOverview">
+            <i class="fa fa-check-square"></i>
+            <strong>{{report.projects.length}}</strong>
+            <span>&nbsp;Projects active</span>
+        </div>
+        <div class="col-md-3 monthOverview">
+            <i class="fa fa-user"></i>
+            <strong>{{report.items.length}}</strong>
+            <span>&nbsp;Employees worked</span>
+        </div>
+        <div class="col-md-3 monthOverview">
+            <i class="fa fa-clock-o"></i>
+            <strong>{{report.total}}</strong>
+            <span>&nbsp;Total Hours</span>
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="cardBox">
+                <h5>Total hours by project</h5>
+                <canvas id="MonthlyReportTotalHoursByProject" class="chart chart-bar" chart-data="dataForMonthlyReportTotalHoursByProject"
+                    chart-labels="labelsForMonthlyReportTotalHoursByProject" chart-options="OptionsForMonthlyReportTotalHoursByProject"
+                    chart-colors="colorsForMonthlyReportTotalHoursByProject">
+                </canvas>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="cardBox">
+                <h5>Total employees by project</h5>
+                <canvas id="NumberOfEmployeesByProject" class="chart chart-bar" chart-data="dataForNumberOfEmployeesByProject" chart-labels="labelsForNumberOfEmployeesByProject"
+                    chart-options="OptionsForNumberOfEmployeesByProject" chart-colors="colorsForNumberOfEmployeesByProject">
+                </canvas>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        <table class="table">
+        <tr>
+            <th>Project</th>
+            <th>Total hours</th>
+        </tr>
+        <!-- ng-init="index = $index" !-->
+        <tr ng-repeat="project in report.projects"  ng-click="MakeProjectChart($index,report)">
+            <td>{{project.project}}</td>
+            <td>{{project.hours}}</td>
+        </tr>
+
+
+
+        </table>
+
+    </div>
+
+
+</div>
+<div ng-show="showing">
+    <h2>Employees and total hours in this month</h2>
+    <table class="table">
+        <tr>
+            <th>Employee</th>
+            <th>Total hours</th>
+        </tr>
+        <tr ng-repeat="employee in report.items" ng-click="MakeEmployeeChart($index, report)">
+            <td>{{employee.employee}}</td>
+            <td>{{employee.total}}</td>
+        </tr>
+    </table>
+</div>

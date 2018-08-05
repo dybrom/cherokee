@@ -1,0 +1,40 @@
+<div class="heading1">
+        <h2 style="margin-top:0;">Teams</h2>
+    </div>
+
+<div class="row" style="margin:-15px 0 15 0; display:flex; align-items: flex-end"> 
+    <div class="col-md-8">
+        <form ng-submit="filter(fil)">
+            <div class="group" style="left:0;margin-bottom:0;">
+                <input type="text" ng-model="fil" id="searchTeam" placeholder="Enter team name"><span class="bar"></span><span class="highlight"></span>
+                <label for="searchTeam">Search Team</label>
+            </div>
+            <div>
+                &nbsp;&nbsp;
+            </div>
+        </form>
+    </div>
+    <div class="offset-md-1 col-md-3">
+            <a href="" ng-click="add()"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="margin-bottom:20px;background-color: #3cba54;"><b>ADD TEAM</b></button></a>
+    </div> 
+</div>
+
+<div>
+    <table class="table" style="margin-bottom:20px;">
+        <tr>
+            <th>Team</th>
+            <th>Members in Team</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="team in teams">
+            <td ng-click="view(team)">{{team.name}}</td>
+            <td ng-click="view(team)">{{team.members.length}}</td>
+            <td>
+                <div class="listButtons">
+                    <a href="" ng-click="edit(team)"><button class="col-md-3 btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-right:10px;">EDIT</button></a>
+                    <a href="" ng-click="delete(team)"><button class="col-md-3 btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color: #db3236;">DELETE</button></a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

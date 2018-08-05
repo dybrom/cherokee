@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-4"><h1>Company dashboard</h1></div>
+
+    <div class="col-md-2">Year: <input type="number" class="form-control" ng-model="year" min="2016" max="2018"></div>
+    <div class="col-md-2">Month: <select class="form-control" ng-model="month"
+                                         ng-options="months.indexOf(ind) as ind for ind in months"></select></div>
+    <div class="col-md-1" style="margin-top:18px">
+        <button type="button"
+                class="btn btn-primary"
+                ng-click="companyReport()">LIST!
+        </button>
+    </div>
+</div>
+<div>
+    {{report}}
+</div>
+<div>
+
+    <canvas id="companyTotalHoursChart"></canvas>
+
+    <canvas id="companyDashMissingEntries"></canvas>
+
+    <canvas id="companyPMutilization"></canvas>
+
+    <canvas id="companyDEVutilization"></canvas>
+
+    <canvas id="companyUXUIutilization"></canvas>
+
+    <canvas id="companyQAutilization"></canvas>
+
+    <canvas id="companyOvertime"></canvas>
+
+    <canvas id="companyRevenue"></canvas>
+
+</div>

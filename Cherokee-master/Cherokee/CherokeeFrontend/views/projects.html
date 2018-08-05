@@ -1,0 +1,19 @@
+<h1>Projects</h1>
+<h2>{{message}}</h2>
+
+<div ng-controller="projController">
+    <span><a href="" ng-click="add(data)"><button class="btn btn-success" style="margin-left:10px;"><b>ADD PROJECT</b></button></a></span></div>
+<hr style="border:1px solid black">
+
+<table id="tableHeaderProjects">
+    <tr>
+        <th>Project:</th>
+        <th>Customer:</th>
+        <th>Team:</th>
+    </tr>
+</table>
+<hr style="border:1px solid black">
+
+<div ng-repeat="item in projects">
+    <project data="item"></project>
+</div>

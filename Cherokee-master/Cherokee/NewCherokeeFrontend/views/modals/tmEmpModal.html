@@ -1,0 +1,32 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="tm-emp-modal-title">{{member.employee.name}}<br>{{member.role.name}}</h3>
+</div>
+
+<div class="modal-body" id="tm-emp-modal-body">
+    <form name="valForm">
+        <input type="hidden" ng-model="member.id"> <!-- id engagement -->
+        <input type="hidden" ng-model="member.employee.id"> <!-- id team member -->
+        <div class="row">
+            <div class="col-md-4 label"><span style="color:red;">* </span>Position:</div>
+            <div class="col-md-6">
+                <select ng-model="member.role.id" class="form-control"
+                        ng-options="role.id as role.name for role in roles"
+                        ng-change="member.role.name=(roles|filter:{id:member.role.id})[0].name" required>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 label"><span style="color:red;">* </span>Hours:</div>
+            <div class="col-md-6"><input type="number" max="40" class="form-control" ng-model="member.hours" required>
+            </div>
+        </div>
+    </form>
+        <div class="row" style="margin-top: 5px;">
+                <div class="col-md-12 text-center"><span style="color:red;">* -> Required fields!</span></div>
+        </div>
+</div>
+
+<div class="row modal-footer">
+    <a href="" ng-click="save(member)" class="col-md-5"><button class="btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-right:10px; background-color: #3cba54;">SAVE</button></a>
+    <a href="" ng-click="cancel(member)"class="col-md-5"><button class="mdl-button mdl-js-button mdl-button--raised">CANCEL</button></a>
+</div>

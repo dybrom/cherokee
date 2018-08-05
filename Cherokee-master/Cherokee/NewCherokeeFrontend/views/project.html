@@ -1,0 +1,77 @@
+<div style="margin-top:20px;">
+    <div class="row">
+        <div class="col-md-12 projectsContainer">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div style="display: flex; flex-direction: row;">
+                                <div class="monogram">
+                                    <span>{{project.monogram}}</span>
+                                </div>
+                                <h2>{{project.name}}</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="" ng-click="edit(project)"><button class="col-md-5 btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-right:10px;">EDIT</button></a>
+                            <a href="" ng-click="delete(project)"><button class="col-md-5 btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color: #db3236;">DELETE</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="clientInfo">
+                        <img src="images/customer.png" alt="" style="width:2.01vw; height: 2.01vw; ">
+                        <div style="display: flex; flex-direction: column; align-items:flex-start; justify-content: center; margin-left:15px;">
+                            <span>Client:</span>
+                            <strong style="font-size:24px;">{{project.customer.name}}</strong>
+                        </div>
+                    </div>
+                    <ul class="projectInfo" style="margin-top:40px;">
+                        <li><div class="Info">
+                            <img src="images/calendar.png" alt="" style="width:2.01vw; height: 2.01vw; ">
+                            <div style="display: flex; flex-direction: column; align-items:flex-start; justify-content: center; margin-left:15px;">
+                                <span>Begin date:</span>
+                                <strong style="font-size:18px;">{{project.beginDate | date: dd/MM/YYYY}}</strong>
+                            </div>
+                        </div></li>
+                        <li>
+                            <div class="Info">
+                                <img src="images/calendarend.png" alt="" style="width:2.01vw; height: 2.01vw; ">
+                                <div style="display: flex; flex-direction: column; align-items:flex-start; justify-content: center; margin-left:15px;">
+                                    <span>End date:</span>
+                                    <strong style="font-size:18px;">{{project.endDate | date:dd/MM/YYYY}}</strong>
+                                </div>
+                            </div></li>
+                        <li><div class="Info">
+                            <img src="images/price-tag.png" alt="" style="width:2.01vw; height: 2.01vw; ">
+                            <div style="display: flex; flex-direction: column; align-items:flex-start; justify-content: center; margin-left:15px;">
+                                <span>Pricing type:</span>
+                                <strong style="font-size:18px;">{{project.pricing}}</strong>
+                            </div>
+                        </div></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+
+                    <h6>Team: <strong>{{project.team.name}}</strong></h6>
+                    <h6>Status: <span class="{{project.status}}">{{project.status}}</span></h6>
+                    <div class="Info" style="margin-bottom:15px;display: flex; flex-direction: column; align-items:flex-start; justify-content: center;">
+                        <span>Amount:</span>
+                        <h6 style="margin:0; font-weight: 900; font-size:23px; color:#474747;">${{project.amount}}.00</h6>
+                    </div>
+                </div>
+
+                <div class="col-md-4 description">
+                    <span>Description:</span>
+                    <p>{{project.description}}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

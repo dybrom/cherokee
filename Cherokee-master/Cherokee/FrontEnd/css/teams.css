@@ -1,0 +1,225 @@
+.teamsContainer {
+
+    padding:25px 0 0 45px;
+}
+
+
+
+.teamMemberList {
+
+    position: relative;
+    overflow-y: scroll;
+    height: 300px;
+    padding-right:15px;
+}
+
+.teamMember {
+
+    display:flex;
+    flex-direction: column;
+    margin-left: 10px;
+
+}
+
+.teamMember span {
+
+    font-size: 1.09vw;
+    font-weight: 900;
+    color:#474747;
+}
+
+.teamMember i {
+
+    font-size:9px;
+    font-style: normal;
+    font-weight: 300;
+
+
+}
+
+.list-group {
+
+    margin-top:15px;
+}
+
+.list-group-item {
+
+    border:none;
+    padding-top:2px;
+}
+
+.list-group-item:nth-child(1) {
+
+    padding-left:0;
+}
+
+li > span {
+
+    font-size:15px;
+
+}
+
+bdi {
+
+    font-weight: 800;
+    font-size:35px;
+    color: #5B5B5B;
+}
+
+.teamInfo {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+
+}
+
+.teamInfo h2 {
+
+    font-weight: 900;
+    color: #5B5B5B;
+    font-size: 2.55vw;
+}
+
+.teamInfo bdi {
+
+    font-size: 24px;
+    font-weight: 700;
+    color:#14D942;
+}
+
+.teamInfo p {
+
+    font-size: 12px;
+    color: #A5A5A5;
+    text-align: justify;
+}
+
+
+
+.btn {
+
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 2px;
+    padding:2px 8px 2px 8px;
+
+}
+
+.teamSelect {
+
+    position: absolute;
+    top:50px;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: lightgray;
+    height:100%;
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+.teamSelect bdi {
+
+    font-size: 12px;
+    font-weight: normal;
+
+}
+
+.teamSelect > .nav-item  {
+
+    background-color: white;
+    width:100%;
+    margin-left:20px;
+    color:#5B5B5B;
+
+
+}
+
+.teamSelect .nav-item .active {
+
+    background-color: white;
+    color:#5B5B5B;
+
+}
+
+.teamSelect .nav-link {
+
+    border-radius: 0;
+    color:#5B5B5B;
+    line-height: 20px;
+}
+
+.teamSelect .nav-link:hover {
+
+    background-color: #e8e8e8;
+}
+
+.teamSelect  .nav-item:first-of-type {
+
+    padding:15px;
+}
+.nav-item > a > * {
+
+    margin-left:2.92vw;
+}
+
+.nav-item > span {
+
+    font-weight: bolder;
+    margin-left:2.5vw;
+
+    padding:10px;
+
+}
+
+.projectsList {
+
+    list-style-type: none;
+    margin-top:40px;
+    padding:0;
+}
+
+.projectsList ul {
+
+    padding:0;
+}
+
+.projectsList h3 {
+
+    font-size: 18px;
+    font-weight: 900;
+    color:#2E3D50;
+
+}
+
+.projectsList li {
+
+    font-size:14px;
+    color:#5B5B5B;
+    display:flex;
+    justify-content: space-between;
+    margin-bottom:7px;
+    padding:0;
+
+
+
+}
+
+.projectsList span {
+
+    font-size:14px;
+}
+
+.projectActive {
+
+    color:#14D942;
+    font-weight: bold;
+}
+
+
+
+
+

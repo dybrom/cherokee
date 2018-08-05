@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="tm-new-modal-title">Add New Team</h3>
+</div>
+
+    <div class="modal-body" id="tm-new-modal-body">
+    <div class="row">
+        <div class="col-md-4 label">Id:</div>
+        <div class="col-md-6"><input type="text" class="form-control" ng-model="team.id"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 label">Name:</div>
+        <div class="col-md-6"><input type="text" class="form-control" ng-model="team.name"></div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="add(team)">Add</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel(team)">Cancel</button>
+</div>

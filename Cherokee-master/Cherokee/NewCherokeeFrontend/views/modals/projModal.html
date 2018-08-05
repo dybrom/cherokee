@@ -1,0 +1,92 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">{{project.name}}</h3>
+</div>
+
+<div class="modal-body" id="modal-body">
+    <form name="valForm">
+        <input type="hidden" ng-model="project.id">
+        <div class="row">
+            <div class="col-md-4 label">Name:</div>
+            <div class="col-md-6"><input type="text" class="form-control" ng-model="project.name"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label">Customer:</div>
+
+            <div class="col-md-6">
+                <select ng-model="project.customer.id" class="form-control"
+                        ng-options="customer.id as customer.name for customer in customers"
+                        ng-value="customer.id">{{customer.name}}</option>
+
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label">Team:</div>
+            <div class="col-md-6">
+                <select ng-model="project.team.id" class="form-control"
+                        ng-options="team.id as team.name for team in teams"
+                        ng-value="team.id">{{team.name}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label">Amount:</div>
+            <div class="col-md-6"><input type="text" class="form-control" ng-model="project.amount" placeholder="Pay!"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label">Description:</div>
+            <div class="col-md-6"><textarea style="resize:vertical; min-height:100px; max-height:150px;" type="text" class="form-control" ng-model="project.description" placeholder="Add description"></textarea></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label">Begin Date:</div>
+            <div class="col-md-6"><input type="text" class="form-control" ng-model="project.beginDate"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label">End Date:</div>
+            <div class="col-md-6"><input type="text" class="form-control" ng-model="project.endDate"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label">Monogram:</div>
+            <div class="col-md-6"><input type="url" class="form-control" ng-model="project.monogram" placeholder="Paste Monogram Url"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label">Status:</div>
+
+            <div class="col-md-6">
+                <select ng-model="project.status" class="form-control">
+                    <option ng-model="project.status" value="InProgress">In Progress</option>
+                    <option ng-model="project.status" value="OnHold">On Hold</option>
+                    <option ng-model="project.status" value="Finished">Finished</option>
+                    <option ng-model="project.status" value="Canceled">Canceled</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 label">Pricing:</div>
+
+            <div class="col-md-6">
+                <select ng-model="project.pricing" class="form-control">
+                    <option ng-model="project.pricing" value="HourlyRate">Hourly Rate</option>
+                    <option ng-model="project.pricing" value="PerCapitaRate">Per Capita Rate</option>
+                    <option ng-model="project.pricing" value="FixedPrice">Fixed Price</option>
+                    <option ng-model="project.pricing" value="NotBillable">Not Billable</option>
+                </select>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row modal-footer">
+    <a href="" ng-click="save(project)" class="col-md-5"><button class="btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="margin-right:10px; background-color: #3cba54;">SAVE</button></a>
+    <a href="" ng-click="cancel(project)"class="col-md-5"><button class="mdl-button mdl-js-button mdl-button--raised">CANCEL</button></a>
+</div>
